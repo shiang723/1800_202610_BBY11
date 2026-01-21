@@ -71,7 +71,7 @@ elmo-hikes/
 
 - **Hannah** - BCIT CST Student with a passion for creating fun projects. Fun fact: Likes drawing and taking walks.
 
-
+- **Mahdi** - BCIT CST Student with a passion for outdoor adventures and creating fun applications. Fun fact: I enjoy playing soccer
 ---
 
 
