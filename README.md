@@ -69,6 +69,9 @@ elmo-hikes/
 - **Your Name** - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
 - **Teammate Name** - BCIT CST Student, Frontend enthusiast with a knack for creative design. Fun fact: Has a collection of over 50 houseplants.
 
+- **Hannah** - BCIT CST Student with a passion for creating fun projects. Fun fact: Likes drawing and taking walks.
+
+
 ---
 
 
