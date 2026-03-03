@@ -66,12 +66,14 @@ elmo-hikes/
 
 
 ## Contributors
-- **Your Name** - BCIT CST Student with a passion for outdoor adventures and user-friendly applications. Fun fact: Loves solving Rubik's Cubes in under a minute.
+- **lydia** - BCIT CST Student with a passion for art. I also love dance and exploring different creative outlits.
+- Arzee Morales - BCIT CST Student with a passion for DJing and going for outside activities in every season. I really love listening to music on why I started to DJ.
 - **Teammate Name** - BCIT CST Student, Frontend enthusiast with a knack for creative design. Fun fact: Has a collection of over 50 houseplants.
 
 - **Hannah** - BCIT CST Student with a passion for creating fun projects. Fun fact: Likes drawing and taking walks.
 
 
+- **Mahdi** - BCIT CST Student with a passion for outdoor adventures and creating fun applications. Fun fact: I enjoy playing soccer
 ---
 
 
