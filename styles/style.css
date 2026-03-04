@@ -1,4 +1,11 @@
 
+/* This is the background color for the navbar*/
+.custom-navbar {
+  background-color: #aeaeae;
+}
+
+
+/* This is the styling for the EXTRATIME logo */
 .navbar .navbar-brand{
   font-family: 'Rubik Distressed', system-ui !important;
   font-weight: 400;
@@ -6,56 +13,168 @@
   
 }
 
-
-
-
-/* HERO SECTION */
-.hero {
-  background-color: #575656;
-  color: white;
-  padding: 100px 20px;
+/* This is the styling for the points links */
+.nav-points-link {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
 }
 
-.hero-title {
-  font-size: 3rem;
-  font-weight: bold;
+/* This is the styling for the points */
+.nav-points-badge {
+    font-size: 1.2rem;     
+    font-weight: normal;
+    margin-left: 0.1rem;   
+    line-height: 1;
+    color: #000000;
 }
 
-.hero-subtitle {
-  font-size: 1.2rem;
-  margin-top: 20px;
-  margin-bottom: 30px;
+/* This is the styling for the points icon */
+.nav-points-img {
+    width: 28px;  
+    height: 28px;
+    object-fit: contain;
 }
 
-.hero-buttons a {
-  margin: 0 10px;
+/* This uses the user action pseudo-class for the points icon */
+.nav-points-img:hover {
+    filter: brightness(1.2); 
 }
 
 
+/* This is the styling for the navbar */
+.navbar-attribution {
+  font-size: 0.7rem;
+  line-height: 1;
+}
 
+/* This is the styling for the profile (Makes it a square) */
+.nav-profile-img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 0; 
+  display: block;
+}
 
-/* Bottom Navigation Layout */
-.nav-item {
+.score-banner {
+    background-color: #ebebeb;   
+            
+}
+
+/* This is the styling for the live button */
+.live-soccer-match {
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+    display: inline-block;
+    animation: pulse-animation 1.2s infinite ease-in-out; 
+}
+
+/* This is the animation for the live button (makes it pulse) */
+@keyframes pulse-animation {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.score-num {
+    font-size: 5rem;
+    font-weight: 400;
+}
+
+.vs-text {
+    font-size: 4.5rem;
+    font-weight: 300;
+}
+
+.team-name {
+    font-size: 1.5rem;      
+    font-weight: normal;    
+    letter-spacing: 2px;    
+    margin-top: 5px;        
+    color: #000;
+}
+
+.flag-icon {
+    height: 5.5rem; 
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Arrow image sizing */
+.dropdown-arrow-img {
+    height: 14px; 
+    width: auto;
+}
+
+/* 1. Reset/Hide by default (Bootstrap .collapse handles this, but we ensure smooth transition) */
+#matchDetails.collapse {
+  display: none;
+}
+
+#matchDetails.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+/* 2. Fullscreen Overlay when Expanded */
+#matchDetails.collapse.show {
   display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1050; /* Above navbar but below modals */
+  background-color: #ebebeb; /* Semi-transparent cover */
+  justify-content: center;
   align-items: center;
-  font-size: 12px;
-  text-decoration: none;
 }
 
-/* Text label under icons */
-.nav-label {
-  margin-top: 2px;
+.banner-dropdown-toggle {
+    border-top: 1.5px solid #000000; /* Light line for dark themes */
+    width: 100%;
+    padding: 10px 0;
+    background-color: transparent; /* Matches your cover background */
+    position: fixed; /* Keep it at the bottom of the screen or content */
+    bottom: 0;
+    z-index: 1061;
 }
 
-/* Google material icons size */
-.material-symbols-outlined {
-  font-size: 24px;
+/* 3. Handle the Toggle Button position */
+.banner-dropdown-toggle {
+  position: relative;
+  z-index: 1060; /* Keep arrow above the overlay */
+  cursor: pointer;
+  background: #aeaeae;
+  padding: 10px;
 }
 
-/* SVG icon sizing */
-.nav-item svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
+/* 4. Rotate Arrow when expanded */
+[aria-expanded="true"] .dropdown-arrow-img {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+[aria-expanded="false"] .dropdown-arrow-img {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/* This is the styling for the footer */
+.footer-list {
+  list-style-type: none;
+  margin: 0;
+}
+
+/* This uses the user action pseudo-class for the footer content */
+.footer-list a:hover {
+
+  text-decoration: underline !important;
 }
