@@ -8,7 +8,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
-import './styles/style.css';
+// import './styles/style.css';
 import {
     loginUser,
     signupUser,
@@ -30,7 +30,7 @@ function initAuthUI() {
     const toLoginBtn = document.getElementById('toLogin');
     const loginForm = document.getElementById('loginForm');
     const signupForm = document.getElementById('signupForm');
-    const redirectUrl = 'main.html';
+    const redirectUrl = 'index.html';
 
     // --- Helper Functions ---
     // Toggle element visibility
