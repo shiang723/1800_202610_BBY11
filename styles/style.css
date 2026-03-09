@@ -178,3 +178,30 @@
 
   text-decoration: underline !important;
 }
+
+
+/* Bottom Navigation Layout */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* Text label under icons */
+.nav-label {
+  margin-top: 2px;
+}
+
+/* Google material icons size */
+.material-symbols-outlined {
+  font-size: 24px;
+}
+
+/* SVG icon sizing */
+.nav-item svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
