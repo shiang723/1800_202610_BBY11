@@ -30,7 +30,7 @@ function initAuthUI() {
     const toLoginBtn = document.getElementById('toLogin');
     const loginForm = document.getElementById('loginForm');
     const signupForm = document.getElementById('signupForm');
-    const redirectUrl = 'index.html';
+    const redirectUrl = 'main.html';
 
     // --- Helper Functions ---
     // Toggle element visibility
@@ -107,13 +107,14 @@ function initAuthUI() {
         const name = document.querySelector('#signupName')?.value?.trim() ?? '';
         const email = document.querySelector('#signupEmail')?.value?.trim() ?? '';
         const password = document.querySelector('#signupPassword')?.value ?? '';
-        if (!name || !email || !password) {
-            showError('Please fill in name, email, and password.');
+        const country = document.querySelector('#signupCountry')?.value ?? '';
+        if (!name || !email || !password || !country) {
+            showError('Please fill in name, email, password, and country.');
             return;
         }
         setSubmitDisabled(signupForm, true);
         try {
-            await signupUser(name, email, password);
+            await signupUser(name, email, password, country);
             location.href = redirectUrl;
         } catch (err) {
             showError(authErrorMessage(err));

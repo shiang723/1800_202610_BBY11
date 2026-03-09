@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/login.css">
 </head>
 
-<body class="d-flex align-items-center justify-content-center vh-100 bg-white">
+<body class="d-flex flex-column align-items-center justify-content-center vh-100 bg-white">
     <div id="authAlert" class="alert alert-danger d-none" role="alert"></div>
     <div id="loginView">
         <div class="login-container px-4">
@@ -40,12 +40,11 @@
 
     <!-- Signup -->
     <div id="signupView" class="d-none">
-        <h2 class="fw-bold mb-4">Sign Up for Extra-Time</h2>
+        <h2 class="fw-bold mb-4">Create an Extra-Time Account</h2>
         <form id="signupForm">
             <div class="mb-3">
-                <label class="form-label fw-semibold">First and Last Name</label>
-                <input type="text" id="signupName" class="form-control" placeholder="First and Last Name"
-                    aria-label="Full name" required />
+                <label class="form-label fw-semibold">Username</label>
+                <input type="text" id="signupName" class="form-control" placeholder="Username" required />
             </div>
             <div class="mb-3">
                 <label class="form-label fw-semibold">Email</label>
@@ -55,6 +54,41 @@
                 <label class="form-label fw-semibold">Password</label>
                 <input type="password" id="signupPassword" class="form-control" placeholder="Password" required />
             </div>
+            <div class=" mb-3">
+                <label class="form-label fw-semibold">Country you want to support (Can be changed later)</label>
+                <select id="signupCountry" class="form-select" required>
+                    <option value="None">None</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Cape Verde">Cape Verde"</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Curaçao">Curaçao</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="England">England</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Iran">Iran</option>
+                    <option value="Ivory Coast">Ivory Coast</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Panama">Panama</option>
+                    <option value="Paraguay">Paraguay</option>
+                </select>
+            </div>
             <button type="submit" class="btn btn-dark w-100">Create Account</button>
         </form>
         <small class="d-block mt-3 text-center">
@@ -62,8 +96,9 @@
             <a href="#" id="toLogin">Login</a>
         </small>
     </div>
-    </div>
-
+    <footer>
+        <img class="py-4 w-50" src="./images/ExtraTimeLogo.png" />
+    </footer>
     <!-- Firebase SDK (Modular) -->
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/firebaseConfig.js"></script>
