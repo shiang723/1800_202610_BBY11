@@ -15,8 +15,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=home,news,videocam"
-        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
@@ -25,127 +23,68 @@
     <link rel="stylesheet" href="styles/profile.css">
 
 </head>
-<body> 
-
-    <!-- Navbar using Bootstrap -->
-    <!------------------------------>
-    <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="login.html">EXTRA TIME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--|| This is the beginning of the profile dropdown code || -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Profile
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Bet on a Match</a></li>
-                            <li><a class="dropdown-item" href="#">View Bets</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Contact Help</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="navbar-nav ms-auto d-flex align-items-center">
-                    <!-- || Points icon || -->
-                    <a class="nav-link nav-points-link" href="Profile.html" aria-label="View Points">
-                        <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon"
-                            class="nav-points-img">
-                        <span class="badge nav-points-badge">1000</span>
-                    </a>
-                    <!-- || Profile icon || -->
-                    <span class="navbar-text me-3 navbar-attribution">
-                        <a href="profile.html" title="user square icons" class="text-decoration-none text-muted">
-                        </a>
-                    </span>
-                    <a class="nav-link p-0" href="profile.html" aria-label="User Profile">
-                        <img src="./images/user-square.png" alt="User Profile" class="nav-profile-img">
-                    </a>
-                </div>
-            </div>
-            <!--|| This is the end of the profile dropdown code || -->
-        </div>
-    </nav>
-
-     <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
-    <!------------------------------>
-
 
 <body>
+
+
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
-    <a>
-        <span class="material-symbols-outlined">
-            close
-        </span>
-    </a>
-    <div id="profile_view">
-        <div id="profile_top">
-            <div id="user_img_name">
-                <img id="profile_pic" src="./images/user-square.png" alt="User Profile">
-                <p class="welcome_msg">Hello <span id="user_name"></span>!</p>
+    <!------------------------------>
+
+
+    <body>
+        <!------------------------------>
+        <!-- Your HTML Layout go here -->
+        <!------------------------------>
+        <!-- Stuff for body goes here -->
+        <a>
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </a>
+        <div id="profile_view">
+            <div id="profile_top">
+                <div id="user_img_name">
+                    <img id="profile_pic" src="./images/user-square.png" alt="User Profile">
+                    <p class="welcome_msg">Hello <span id="user_name"></span>!</p>
+                </div>
+
+                <p>Your Points:
+                    <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon"
+                        class="nav-points-img">
+                    <span id="user_point"></span>
+                </p>
+
+                <p>Team: <span id="support_country"></span></p>
+
             </div>
 
-            <p>Your Points:
-                <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon" class="nav-points-img">
-                <span id="user_point"></span>
-            </p>
+            <div id="user_menu" class="list-group list-group-flush">
 
-            <p>Team: <span id="support_country"></span></p>
+                <a class="list-group-item">
+                    <h3>Edit Profile</h3>
+                    <p>Change team, Change email, etc.</p>
+                </a>
+                <a class="list-group-item">
+                    <h3>Earn Free Points</h3>
+                    <p>Play Trivia</p>
+                </a>
+                <a class="list-group-item">
+                    <h3>Settings</h3>
+                    <p>Preferences, etc.</p>
+                </a>
+                <p id="logoutButtonWrapper" class="list-group-item">
+                    <button class="btn btn-dark btn-lg" id="logoutButton">
+                        Log Out
+                    </button>
+                </p>
 
+            </div>
         </div>
 
-        <div id="user_menu" class="list-group list-group-flush">
-
-            <a class="list-group-item">
-                <h3>Edit Profile</h3>
-                <p>Change team, Change email, etc.</p>
-            </a>
-            <a class="list-group-item">
-                <h3>Earn Free Points</h3>
-                <p>Play Trivia</p>
-            </a>
-            <a class="list-group-item">
-                <h3>Settings</h3>
-                <p>Preferences, etc.</p>
-            </a>
-            <p id="logoutButtonWrapper" class="list-group-item">
-                <button class="btn btn-dark btn-lg" id="logoutButton">
-                    Log Out
-                </button>
-            </p>
-
-        </div>
-    </div>
-
-    <script type="module" src="./src/profileMenuHandler.js"></script>
-</body>
-
-<footer>
-    <div id="bottom-nav"></div>
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
-    <script type="module" src="./src/main.js"></script>
-    <div id="bottom-nav"></div>
-    <script type="module" src="./src/bottomNavLoader.js"></script>        
-</footer>
+        <script type="module" src="./src/profileMenuHandler.js"></script>
+    </body>
 
 </html>
