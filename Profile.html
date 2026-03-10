@@ -20,12 +20,94 @@
 
 </head>
 <body> 
+
+    <!-- Navbar using Bootstrap -->
+    <!------------------------------>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="login.html">EXTRA TIME</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--|| This is the beginning of the profile dropdown code || -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Profile
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Bet on a Match</a></li>
+                            <li><a class="dropdown-item" href="#">View Bets</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Contact Help</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto d-flex align-items-center">
+                    <!-- || Points icon || -->
+                    <a class="nav-link nav-points-link" href="Profile.html" aria-label="View Points">
+                        <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon"
+                            class="nav-points-img">
+                        <span class="badge nav-points-badge">1000</span>
+                    </a>
+                    <!-- || Profile icon || -->
+                    <span class="navbar-text me-3 navbar-attribution">
+                        <a href="profile.html" title="user square icons" class="text-decoration-none text-muted">
+                        </a>
+                    </span>
+                    <a class="nav-link p-0" href="profile.html" aria-label="User Profile">
+                        <img src="./images/user-square.png" alt="User Profile" class="nav-profile-img">
+                    </a>
+                </div>
+            </div>
+            <!--|| This is the end of the profile dropdown code || -->
+        </div>
+    </nav>
+
      <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
+    <!------------------------------>
+
+    <!-- || This is the start of the betting info || -->
+    <div class="betting-logic">
+        <br>
+        <h1 class="leader">Points Betting Overview</h1>
+        <p>Points betting is putting money behind an outcome of your choice and getting paid if that outcome is achieved</p>
+        <p>Betting odds show how likely an outcome is and how much points you can win from a bet. 
+            Understanding these odds helps beginners know the risk of a bet and estimate how much 
+            they could earn if their prediction is correct.</p>
+        <br>
+        <h1 class="leader">What are Odds?</h1>
+        <p>Understanding the odds helps bettors make better decisions and avoid making hasty bets.</p>
+        <p></p>
+        <p><span>Negative Odds (-)</span> = shows how much points you want to bet to win points.</p>
+        <p>Example: Odds of -200 mean you must bet 200 points to win 100 points.
+            If you win, you get a total of 300 points (200 stake + 100 profit)</p>
+        <p></p>
+        <p><span>Positive Odds (+)</span> = shows how much profit you can make from how much points you betted.</p>
+        <p>Example: Odds of +150 means if you bet 100 points, you can win 150 points.
+            If you win, you get a total of 250 points (200 stake + 150 profit)</p>
+    </div>
+    <!-- || This is the end of the betting info || -->     
      <footer>
-        
+    <div id="bottom-nav"></div>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+
+    <!-- Link to scripts of your own -->
+    <script type="module" src="./src/main.js"></script>
+    <div id="bottom-nav"></div>
+    <script type="module" src="./src/bottomNavLoader.js"></script>        
      </footer>
 </body>
 </html>
