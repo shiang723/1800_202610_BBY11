@@ -36,7 +36,7 @@
         font-size: 24pt;
 }
 
-#logoutButton {
+#logoutButtonWrapper {
         display: flex;
         justify-content: flex-end;
         padding-right: 3%;
