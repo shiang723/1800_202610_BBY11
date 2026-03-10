@@ -19,8 +19,8 @@ function initAuthUI() {
 }
 function getUserInfo(){
     const usernameElement = document.getElementById('user_name')
-    const userPoints = document.getElementById('user_point');
-    const userCountry = document.getElementById('support_country');
+    const userPointsElement = document.getElementById('user_point');
+    const userCountryElement = document.getElementById('support_country');
 
 
     onAuthReady(async (user) => {
@@ -47,11 +47,11 @@ function getUserInfo(){
           if (usernameElement) {
               usernameElement.textContent = name;
           }
-          if (userPoints) {
-              userPoints.textContent = points;
+          if (userPointsElement) {
+              userPointsElement.textContent = points;
           }
-           if (userCountry) {
-              userCountry.textContent = country;
+           if (userCountryElement) {
+              userCountryElement.textContent = country;
           }
     });
 }
