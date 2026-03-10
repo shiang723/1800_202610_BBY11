@@ -1,3 +1,8 @@
+#exit_button {
+        text-decoration: none;
+        color: #000000;
+}
+
 .material-symbols-outlined {
         display: flex;
         justify-content: flex-end;
