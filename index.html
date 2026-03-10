@@ -16,130 +16,15 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <!-- Font libraries -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=home,news,videocam"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
     <!-- Link to stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
-    <script type="module" src="./src/bottomNavLoader.js"></script>
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Navbar using Bootstrap -->
-    <!------------------------------>
-    <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="login.html">EXTRA TIME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--|| This is the beginning of the profile dropdown code || -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Profile
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Bet on a Match</a></li>
-                            <li><a class="dropdown-item" href="#">View Bets</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Contact Help</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="navbar-nav ms-auto d-flex align-items-center">
-                    <!-- || Points icon || -->
-                    <a class="nav-link nav-points-link" href="Profile.html" aria-label="View Points">
-                        <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon"
-                            class="nav-points-img">
-                        <span class="badge nav-points-badge">1000</span>
-                    </a>
-                    <!-- || Profile icon || -->
-                    <span class="navbar-text me-3 navbar-attribution">
-                        <a href="profile.html" title="user square icons" class="text-decoration-none text-muted">
-                        </a>
-                    </span>
-                    <a class="nav-link p-0" href="profile.html" aria-label="User Profile">
-                        <img src="./images/user-square.png" alt="User Profile" class="nav-profile-img">
-                    </a>
-                </div>
-            </div>
-            <!--|| This is the end of the profile dropdown code || -->
-        </div>
-    </nav>
-    <div id="matchDetails" class="score-banner container-fluid d-flex flex-column align-items-center py-3">
-        <!-- Live Indicator -->
-        <div class="live-badge mb-2">
-            <img src="./images/soccer.png" alt="Soccer Matches" class="live-soccer-match">
-        </div>
-
-        <!-- Match Content -->
-        <div class="d-flex align-items-center justify-content-center w-100 gap-4">
-            <!-- Team Left -->
-            <div class="team text-center">
-                <img src="./images/flag.png" alt="ARG Flag" class="flag-icon mb-2">
-                <div class="team-name">ARG</div>
-            </div>
-
-            <!-- Score Central -->
-            <div class="score-display d-flex align-items-center gap-3">
-                <span class="score-num">0</span>
-                <span class="vs-text">vs</span>
-                <span class="score-num">0</span>
-            </div>
-
-            <!-- Team Right -->
-            <div class="team text-center">
-                <img src="./images/flag.png" alt="ARG Flag" class="flag-icon mb-2">
-                <div class="team-name">BRA</div>
-            </div>
-        </div>
-
-        <!-- Match Time -->
-        <div class="match-time mt-2">
-            46:38 <span class="added-time">+6</span>
-        </div>
+    <div class="d-flex flex-column align-items-center justify-content-center pt-5">
+        <img class="py-5 w-25" src="./images/ExtraTimeLogo.png" />
+        <a class="my-5 btn btn-dark w-25" href="./login.html">Login</a>
     </div>
-
-    <!-- Dropdown Handle -->
-    <div class="banner-dropdown-toggle d-flex justify-content-center align-items-center" data-bs-toggle="collapse"
-        data-bs-target="#matchDetails" aria-expanded="true" aria-controls="matchDetails" role="button" tabindex="0">
-        <img src="./images/arrow-down.png" alt="Toggle Menu" class="dropdown-arrow-img">
-    </div>
-
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
-    <!------------------------------>
-
-
-    <!------------------------------>
-    <!-- Footer using Bootstrap -->
-    <!------------------------------>
-    <footer class=" footer d-flex flex-wrap vstack align-items-center py-3 my-4 border-top bg-secondary">
-        <p class="d-flex mb-0 text-light"> BCIT Group BBY11</p>
-        <div>
-            <ul class="d-flex align-content-start py-2 px-2 vstack footer-list">
-                <li>
-                    <a class="text-light" href="#">About us</a>
-                </li>
-                <li>
-                    <a class="text-light" href="#">Support</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-    <div id="bottom-nav"></div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -147,8 +32,6 @@
 
     <!-- Link to scripts of your own -->
     <script type="module" src="./src/main.js"></script>
-    <div id="bottom-nav"></div>
-    <script type="module" src="./src/bottomNavLoader.js"></script>
 </body>
 
 </html>
