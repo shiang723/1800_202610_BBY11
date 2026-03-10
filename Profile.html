@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <title>My BCIT Project</title>
+    <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!-- Required meta tags -->
@@ -9,23 +10,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Other libraries go here -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=home,news,videocam"
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+    <link rel="stylesheet" href="styles/profile.css">
 
 </head>
-<body> 
-     <!------------------------------>
+
+<body>
+    <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
-     <footer>
-        
-     </footer>
+    <a>
+        <span class="material-symbols-outlined">
+            close
+        </span>
+    </a>
+    <div id="profile_view">
+        <div id="profile_top">
+            <div id="user_img_name">
+                <img id="profile_pic" src="./images/user-square.png" alt="User Profile">
+                <p class="welcome_msg">Hello <span id="user_name"></span>!</p>
+            </div>
+
+            <p>Your Points:
+                <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon" class="nav-points-img">
+                <span id="user_point"></span>
+            </p>
+
+            <p>Team: <span id="support_country"></span></p>
+
+        </div>
+
+        <div id="user_menu" class="list-group list-group-flush">
+
+            <a class="list-group-item">
+                <h3>Edit Profile</h3>
+                <p>Change team, Change email, etc.</p>
+            </a>
+            <a class="list-group-item">
+                <h3>Earn Free Points</h3>
+                <p>Play Trivia</p>
+            </a>
+            <a class="list-group-item">
+                <h3>Settings</h3>
+                <p>Preferences, etc.</p>
+            </a>
+            <p id="logoutButton" class="list-group-item">
+                <button class="btn btn-dark btn-lg">
+                    Log Out
+                </button>
+            </p>
+
+        </div>
+    </div>
+
+    <script type="module" src="./src/profileMenuHandler.js"></script>
 </body>
+
 </html>
