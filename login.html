@@ -5,100 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log into Extra-Time</title>
-    <link href="https://cdn.jsdelivr.net" rel="stylesheet">
     <link rel="stylesheet" href="styles/login.css">
 </head>
 
-<body class="d-flex flex-column align-items-center justify-content-center vh-100 bg-white">
-    <div id="authAlert" class="alert alert-danger d-none" role="alert"></div>
-    <div id="loginView">
-        <div class="login-container px-4">
+<body>
+    <div class="d-flex flex-column align-items-center justify-content-center vh-80 pt-5">
+
+        <div id="authAlert" class="alert alert-danger d-none" role="alert"></div>
+
+        <div id="loginView">
             <h2 class="fw-bold mb-4">Log into Extra-Time</h2>
             <form id="loginForm" novalidate>
                 <!-- Email Input -->
                 <div class="mb-3">
-                    <label class="form-label fw-semibold">Email</label>
-                    <input type="email" id="loginEmail" class="form-control py-2" placeholder="example@mail.com">
+                    <p class="form-label fw-semibold">Email</p>
+                    <input type="email" id="loginEmail" class="form-control" placeholder="example@mail.com" required />
                 </div>
 
                 <!-- Password Input -->
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Password</label>
-                    <input type="password" id="loginPassword" class="form-control py-2" placeholder="Password">
+                <div class="mb-3">
+                    <p class="form-label fw-semibold">Password</p>
+                    <input type="password" id="loginPassword" class="form-control" placeholder="Password" required />
                 </div>
 
                 <!-- Buttons & Links -->
-                <button type="submit" id="loginBtn" class="btn btn-dark w-100 py-2 mb-2">Log in</button>
+                <button type="submit" id="loginBtn" class="btn btn-dark w-100">Log in</button>
                 <div class="text-center mb-5">
-                    <a href="#" class="text-decoration-underline text-dark small">Forgot password?</a>
+                    <a href="" class="text-decoration-underline text-dark small">Forgot password?</a>
                 </div>
-
-                <button id="toSignup" class="btn btn-dark w-100 py-2" href="#">Sign up</button>
             </form>
+
+            <button id="toSignup" class="btn btn-dark w-100" href="">Sign up</button>
+
         </div>
+
+        <!-- Signup -->
+        <div id="signupView" class="d-none">
+            <h2 class="fw-bold mb-4">Create an Extra-Time Account</h2>
+            <form id="signupForm">
+                <div class="mb-3">
+                    <p class="form-label fw-semibold">Username</p>
+                    <input type="text" id="signupName" class="form-control" placeholder="Username" required />
+                </div>
+                <div class="mb-3">
+                    <p class="form-label fw-semibold">Email</p>
+                    <input type="email" id="signupEmail" class="form-control" placeholder="example@mail.com" required />
+                </div>
+                <div class=" mb-3">
+                    <p class="form-label fw-semibold">Password</p>
+                    <input type="password" id="signupPassword" class="form-control" placeholder="Password" required />
+                </div>
+                <div class=" mb-3">
+                    <p class="form-label fw-semibold">Country you want to support (Can be changed later)</p>
+                    <select id="signupCountry" class="form-select" required>
+                        <option value="None">None</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Cape Verde">Cape Verde"</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Curaçao">Curaçao</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="England">England</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Ivory Coast">Ivory Coast</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Paraguay">Paraguay</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-dark w-100">Sign Up</button>
+            </form>
+            <small class="d-block mt-3 text-center">
+                Already have an account?
+                <a href="#" id="toLogin">Login</a>
+            </small>
+        </div>
+        <footer>
+            <img id="bottom_logo" src="./images/ExtraTimeLogo.png" />
+        </footer>
     </div>
 
-    <!-- Signup -->
-    <div id="signupView" class="d-none">
-        <h2 class="fw-bold mb-4">Create an Extra-Time Account</h2>
-        <form id="signupForm">
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Username</label>
-                <input type="text" id="signupName" class="form-control" placeholder="Username" required />
-            </div>
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Email</label>
-                <input type="email" id="signupEmail" class="form-control" placeholder="example@mail.com" required />
-            </div>
-            <div class=" mb-3">
-                <label class="form-label fw-semibold">Password</label>
-                <input type="password" id="signupPassword" class="form-control" placeholder="Password" required />
-            </div>
-            <div class=" mb-3">
-                <label class="form-label fw-semibold">Country you want to support (Can be changed later)</label>
-                <select id="signupCountry" class="form-select" required>
-                    <option value="None">None</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Austria">Austria</option>
-                    <option value="Belgium">Belgium</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Cape Verde">Cape Verde"</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="Curaçao">Curaçao</option>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Egypt">Egypt</option>
-                    <option value="England">England</option>
-                    <option value="France">France</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Ghana">Ghana</option>
-                    <option value="Haiti">Haiti</option>
-                    <option value="Iran">Iran</option>
-                    <option value="Ivory Coast">Ivory Coast</option>
-                    <option value="Japan">Japan</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Morocco">Morocco</option>
-                    <option value="Netherlands">Netherlands</option>
-                    <option value="New Zealand">New Zealand</option>
-                    <option value="Norway">Norway</option>
-                    <option value="Norway">Norway</option>
-                    <option value="Panama">Panama</option>
-                    <option value="Paraguay">Paraguay</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-dark w-100">Create Account</button>
-        </form>
-        <small class="d-block mt-3 text-center">
-            Already have an account?
-            <a href="#" id="toLogin">Login</a>
-        </small>
-    </div>
-    <footer>
-        <img class="py-4 w-50" src="./images/ExtraTimeLogo.png" />
-    </footer>
     <!-- Firebase SDK (Modular) -->
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/firebaseConfig.js"></script>
