@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("nav-home")?.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "main.html";
+      window.location.href = "mainLandingPage.html";
     });
 
     document.getElementById("nav-highlights")?.addEventListener("click", (e) => {
