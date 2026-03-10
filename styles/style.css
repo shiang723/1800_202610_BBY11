@@ -205,3 +205,39 @@
   height: 24px;
   fill: currentColor;
 }
+
+/* Leaderboard header */
+h1.leader{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Ranks */
+.rank {
+  font-weight: bold;
+}
+
+/* Leaderboard Table */
+table {
+border-collapse: collapse;
+width: 50%;
+margin: 20px auto;
+
+th, td{
+  border: 1px solid;
+  padding: 10px;
+  text-align: center;
+}
+}
+
+/* Betting Logic */
+.betting-logic {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+span {
+  font-weight: bold;
+}
