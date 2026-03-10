@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Leaderboard</title>
+    <title>Betting Info</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!-- Required meta tags -->
@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
+<title>Betting Logic</title>
 
 <body>
     <!------------------------------>
@@ -29,7 +30,7 @@
     <!------------------------------>
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="login.html">EXTRA TIME</a>
+            <a class="navbar-brand">EXTRA TIME</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -46,6 +47,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Bet on a Match</a></li>
                             <li><a class="dropdown-item" href="#">View Bets</a></li>
+                            <li><a class="dropdown-item" href="betting-info.html">Betting Logic</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -73,69 +75,32 @@
             <!--|| This is the end of the profile dropdown code || -->
         </div>
     </nav>
-    <!-- || This is the beginning of the leaderboard || -->
-    <br>
-    <h1 class="leader">Player Leaderboard</h1>
-    <table>
-        <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Points</th>
-        </tr>
-        <tr>
-            <td class="rank">1st</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td class="rank">2nd</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td class="rank">3rd</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-    </table>
-    <!-- || This is the end of the leaderboard || -->
 
-
+    <!-- || This is the start of the betting info || -->
+    <div class="betting-logic">
+        <br>
+        <h1 class="leader">Points Betting Overview</h1>
+        <p>Points betting is putting money behind an outcome of your choice and getting paid if that outcome is achieved
+        </p>
+        <p>Betting odds show how likely an outcome is and how much points you can win from a bet.
+            Understanding these odds helps beginners know the risk of a bet and estimate how much
+            they could earn if their prediction is correct.</p>
+        <br>
+        <h1 class="leader">What are Odds?</h1>
+        <p>Understanding the odds helps bettors make better decisions and avoid making hasty bets.</p>
+        <p></p>
+        <p><span>Negative Odds (-)</span> = shows how much points you want to bet to win points.</p>
+        <p>Example: Odds of -200 mean you must bet 200 points to win 100 points.
+            If you win, you get a total of 300 points (200 stake + 100 profit)</p>
+        <p></p>
+        <p><span>Positive Odds (+)</span> = shows how much profit you can make from how much points you betted.</p>
+        <p>Example: Odds of +150 means if you bet 100 points, you can win 150 points.
+            If you win, you get a total of 250 points (200 stake + 150 profit)</p>
+    </div>
+    <!-- || This is the end of the betting info || -->
+</body>
+<footer>
+    <div id="bottom-nav"></div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -145,8 +110,6 @@
     <script type="module" src="./src/main.js"></script>
     <div id="bottom-nav"></div>
     <script type="module" src="./src/bottomNavLoader.js"></script>
-
-
-</body>
+</footer>
 
 </html>
