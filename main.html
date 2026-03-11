@@ -21,6 +21,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    rel="stylesheet">
     <!-- Link to stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
@@ -49,7 +51,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Bet on a Match</a></li>
                             <li><a class="dropdown-item" href="#">View Bets</a></li>
-                            <li><a class="dropdown-item" href="betting-info.html">Betting Logic</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -75,48 +76,119 @@
                 </div>
             </div>
             <!--|| This is the end of the profile dropdown code || -->
-        </div>
-    </nav>
-    <div id="matchDetails" class="score-banner container-fluid d-flex flex-column align-items-center py-3">
-        <!-- Live Indicator -->
-        <div class="live-badge mb-2">
-            <img src="./images/soccer.png" alt="Soccer Matches" class="live-soccer-match">
-        </div>
 
-        <!-- Match Content -->
-        <div class="d-flex align-items-center justify-content-center w-100 gap-4">
-            <!-- Team Left -->
-            <div class="team text-center">
-                <img src="./images/flag.png" alt="ARG Flag" class="flag-icon mb-2">
-                <div class="team-name">ARG</div>
-            </div>
+</div>
+</nav>
 
-            <!-- Score Central -->
-            <div class="score-display d-flex align-items-center gap-3">
-                <span class="score-num">0</span>
-                <span class="vs-text">vs</span>
-                <span class="score-num">0</span>
-            </div>
+<!-- =========================
+     Matches Section
+========================= -->
+<div class="matches-wrapper">
 
-            <!-- Team Right -->
-            <div class="team text-center">
-                <img src="./images/flag.png" alt="ARG Flag" class="flag-icon mb-2">
-                <div class="team-name">BRA</div>
-            </div>
+    <!-- Live Matches -->
+    <h1 class="section-title">Live Matches</h1>
+
+    <div class="match-card">
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">ARG</div>
         </div>
 
-        <!-- Match Time -->
-        <div class="match-time mt-2">
-            46:38 <span class="added-time">+6</span>
+        <div class="match-middle">
+            <div class="live-pill">🔴 LIVE</div>
+            <div class="score-row">
+                <span>3</span>
+                <span>vs</span>
+                <span>0</span>
+            </div>
+            <div class="live-time">90' +6</div>
+        </div>
+
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">CAN</div>
         </div>
     </div>
 
-    <!-- Dropdown Handle -->
-    <div class="banner-dropdown-toggle d-flex justify-content-center align-items-center" data-bs-toggle="collapse"
-        data-bs-target="#matchDetails" aria-expanded="true" aria-controls="matchDetails" role="button" tabindex="0">
-        <img src="./images/arrow-down.png" alt="Toggle Menu" class="dropdown-arrow-img">
+    <div class="match-card">
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">ARG</div>
+        </div>
+
+        <div class="match-middle">
+            <div class="live-pill">🔴 LIVE</div>
+            <div class="score-row">
+                <span>1</span>
+                <span>vs</span>
+                <span>1</span>
+            </div>
+            <div class="live-time">45' +3</div>
+        </div>
+
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">BRA</div>
+        </div>
     </div>
 
+    <!-- Upcoming Matches -->
+    <h1 class="section-title upcoming-title">Upcoming Matches</h1>
+
+    <div class="match-card">
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">MEX</div>
+        </div>
+
+        <div class="match-middle">
+            <div class="upcoming-vs">vs</div>
+            <div class="match-date">June 11, 26 &nbsp; 12:00 P.M.</div>
+        </div>
+
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">RSA</div>
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">KOR</div>
+        </div>
+
+        <div class="match-middle">
+            <div class="upcoming-vs">vs</div>
+            <div class="match-date">June 11, 26 &nbsp; 7:00 P.M.</div>
+        </div>
+
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">TBD</div>
+        </div>
+    </div>
+
+    <div class="match-card">
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">CAN</div>
+        </div>
+
+        <div class="match-middle">
+            <div class="upcoming-vs">vs</div>
+            <div class="match-date">June 12, 26 &nbsp; 12:00 P.M.</div>
+        </div>
+
+        <div class="team-side">
+            <span class="material-symbols-outlined flag-icon">flag</span>
+            <div class="team-name">TBD</div>
+        </div>
+    </div>
+
+</div>
+
+  
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -124,22 +196,7 @@
     <!------------------------------>
 
 
-    <!------------------------------>
-    <!-- Footer using Bootstrap -->
-    <!------------------------------>
-    <footer class=" footer d-flex flex-wrap vstack align-items-center py-3 my-4 border-top bg-secondary">
-        <p class="d-flex mb-0 text-light"> BCIT Group BBY11</p>
-        <div>
-            <ul class="d-flex align-content-start py-2 px-2 vstack footer-list">
-                <li>
-                    <a class="text-light" href="#">About us</a>
-                </li>
-                <li>
-                    <a class="text-light" href="#">Support</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+
     <div id="bottom-nav"></div>
 
     <!---------------------------------------------->
