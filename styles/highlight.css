@@ -9,7 +9,7 @@
 
 /* Gray Top Bar */
 .navbar-top {
-    background-color: #D9D9D9; 
+    background-color: #3A506B; 
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -17,15 +17,39 @@
     padding: 0 20px;
 }
 
+.logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
 /* Styling for the logo */
 .logo-img {
-    height: 50px; 
-    display: block;
+     position: absolute;
+    z-index: 1;
+    width: 60px; /* Adjust based on your image size */
+    opacity: 0.3; /* Optional: makes it look like a watermark */
+    pointer-events: none;
 }
+
+.logo-container h1 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    color: #ffffff;
+}
+
+.ET {
+  font-family: "Hanalei Fill", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* -------------------------- */
 /* Styling for user points */
 /* -------------------------- */
-
 .user-info {
     display: flex;
     align-items: center;
@@ -33,6 +57,7 @@
 }
 
 .points {
+  color: #ffffff;
     font-size: 1.2rem;
     font-weight: 500;
     display: flex;
@@ -41,7 +66,8 @@
 }
 
 .p-icon {
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
+    color: #ffffff;
     border-radius: 50%;
     width: 24px;
     height: 24px;
