@@ -13,7 +13,7 @@ document.getElementById("cancelUpdate").addEventListener("click", () =>{
 })
 
 async function getMatchInfo(match) {
-    const matchDoc = await getDoc(doc(db, "matches", match.uid));
+    const matchDoc = await getDoc(doc(db, "Match", match.uid));
     if (matchDoc.exists()){
         const homeCountryElement = document.getElementById("homeCountry");
         const awayCountryElement = document.getElementById("awayCountry");
@@ -21,11 +21,11 @@ async function getMatchInfo(match) {
         const awayPointsElement = document.getElementById("awayPointsTextbox").value;
         const matchStatusElement = document.getElementById("matchStatusDropdown").value;
 
-        homeCountryElement = matchDoc.homeCountry;
-        awayCountryElement = matchDoc.awayCountry;
-        homePointsElement = matchDoc.homePoints;
-        awayPointsElement = matchDoc.homePoints;
-        matchStatusElement = matchDoc.homePoints;
+        homeCountryElement = matchDoc.home_team + " Points";
+        awayCountryElement = matchDoc.away_team + " Points";
+        homePointsElement = matchDoc.home_points_scored;
+        awayPointsElement = matchDoc.away_points_scored;
+        matchStatusElement = matchDoc.status;
       
     } else {
     console.log("matchID not found in firestore");
@@ -37,9 +37,9 @@ async function updateMatchInfo(match) {
     const awayPointsUpdated = document.getElementById("awayPointsTextbox").value;
     const matchStatusUpdated = document.getElementById("matchStatusDropdown").value;
 
-    await setDoc(doc(db, "matches", match.uid),{
-        homePoints: homePointsUpdated,
-        awayPoints: awayPointsUpdated,
-        matchStatus: matchStatusUpdated
+    await setDoc(doc(db, "Match", match.uid),{
+        home_points_scored: homePointsUpdated,
+        away_points_scored: awayPointsUpdated,
+        status: matchStatusUpdated
     });
 }
