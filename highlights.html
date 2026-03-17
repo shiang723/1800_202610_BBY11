@@ -12,30 +12,102 @@
     <!-- Other libraries go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <!-- Links for google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=home,news,videocam"
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- Links for this html file's style sheet -->
+    <link rel="stylesheet" href="styles/highlight.css">
 </head>
 
 <body>
+<!---------------------------------------->
+<!-- Header for the navbar and Filter -->
+<!---------------------------------------->
+<header class="fixed-top">
+    <!-- Top Gray Navbar -->
+    <nav class="navbar-top">
+        <div class="logo-container">
+    <!-- Logo -->
+            <img src="images/Logo.png" alt="EXTRA TIME" class="logo-img">
+        </div>
+    <!-- Points (Just a place holder) -->
+        <div class="user-info">
+            <div class="points">
+                <span class="p-icon">P</span> 1000
+            </div>
+    <!-- Profile (Just a place holder) -->
+            <img src="images/Profile.png" alt="User" class="profile-pic">
+        </div>
+    </nav>
 
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <button class="filter-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            Filter
+        </button>
+    </div>
+</header>
+<!-------------------------->
+<!-- End of Header code -->
+<!-------------------------->
 
+<!-------------------------->
+<!-- Main content code -->
+<!-------------------------->
+<main class="highlights-list">
+  
+    <!-- Highlight Item 1 -->
+  <div class="highlight-card">
+    <div class="video-box">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+    </div>
+    <div class="text-content">
+      <h2>Highlight of X vs Y</h2>
+      <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
+    </div>
+  </div>
 
+    <!-- Highlight Item 2 -->
+  <div class="highlight-card">
+    <div class="video-box">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+    </div>
+    <div class="text-content">
+      <h2>Highlight of Y vs Z</h2>
+      <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
+    </div>
+  </div>
 
+    <!-- Highlight Item 3 -->
+  <div class="highlight-card">
+    <div class="video-box">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+    </div>
+    <div class="text-content">
+      <h2>Highlight of X vs Z</h2>
+      <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
+    </div>
+  </div>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+</main>
+<!-------------------------------->
+<!-- End of Main content code -->
+<!-------------------------------->
 
-    <!-- Link to scripts of your own -->
+<!---------------------------------------------->
+<!-- Your own JavaScript functions go here    -->
+<!---------------------------------------------->
+
+    <!-- Link to scripts for the footer -->
     <script type="module" src="./src/main.js"></script>
-    <div id="bottom-nav"></div>
+    <div id="bottom-nav"></div> 
     <script type="module" src="./src/bottomNavLoader.js"></script>
-
-
 </body>
 
 </html>
