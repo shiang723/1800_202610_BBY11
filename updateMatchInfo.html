@@ -21,8 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <!-- Link to stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
@@ -76,124 +75,37 @@
                 </div>
             </div>
             <!--|| This is the end of the profile dropdown code || -->
+
         </div>
     </nav>
 
-<!-- =========================
-     Matches Section
-========================= -->
-<div class="matches-wrapper">
-
-    <!-- Live Matches -->
-    <h1 class="section-title">Live Matches</h1>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">ARG</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="live-pill">🔴 LIVE</div>
-            <div class="score-row">
-                <span>3</span>
-                <span>vs</span>
-                <span>0</span>
+    <div>
+        <form>
+            <div>
+                <label for="homePointsTextbox" id="homeCountry"></label>
+                <input type="number" min="0" id="homePointsTextbox">
             </div>
-            <div class="live-time">90' +6</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">CAN</div>
-        </div>
-    </div>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">ARG</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="live-pill">🔴 LIVE</div>
-            <div class="score-row">
-                <span>1</span>
-                <span>vs</span>
-                <span>1</span>
+            <div>
+                <label for="awayPointsTextbox" id="awayCountry"></label>
+                <input type="number" min="0" id="awayPointsTextbox">
             </div>
-            <div class="live-time">45' +3</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">BRA</div>
-        </div>
+            <div>
+                <label for="matchStatusDropdown" id="matchStatusLabel">Match Status:</label>
+                <select name="selectStatus" id="matchStatusDropdown">
+                    <option value="live">Live</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+            <div>
+                <label for="cancelUpdate" id="cancelUpdateLabel"></label>
+                <input type="button" id="cancelUpdate">
+            </div>
+            <div>
+                <label for="saveUpdateInfo" id="saveButtonLabel"></label>
+                <input type="submit" id="saveUpdateInfo">
+            </div>
+        </form>
     </div>
-
-    <!-- Upcoming Matches -->
-    <h1 class="section-title upcoming-title">Upcoming Matches</h1>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">MEX</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="upcoming-vs">vs</div>
-            <div class="match-date">June 11, 26 &nbsp; 12:00 P.M.</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">RSA</div>
-        </div>
-    </div>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">KOR</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="upcoming-vs">vs</div>
-            <div class="match-date">June 11, 26 &nbsp; 7:00 P.M.</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">TBD</div>
-        </div>
-    </div>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">CAN</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="upcoming-vs">vs</div>
-            <div class="match-date">June 12, 26 &nbsp; 12:00 P.M.</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">TBD</div>
-        </div>
-    </div>
-
-</div>
-
-  
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
-    <!------------------------------>
-
 
 
     <div id="bottom-nav"></div>
@@ -204,6 +116,7 @@
 
     <!-- Link to scripts of your own -->
     <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/updateMatchInfo.js"></script>
 </body>
 
 </html>
