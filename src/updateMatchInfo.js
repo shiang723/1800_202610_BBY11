@@ -1,4 +1,4 @@
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from './firebaseConfig.js';
 
 
@@ -18,23 +18,23 @@ document.getElementById("cancelUpdate").addEventListener("click", () => {
 async function getMatchInfo() {
     const id = getDocIdFromUrl();
     try {
-        const matchDoc = await getDoc(doc(db, "Match", id));
+        const matchDoc = await getDoc(doc(db, "Match",id));
         const matchData = matchDoc.data();
 
-        const homeCountryElement = document.getElementById("homeCountry");
-        const awayCountryElement = document.getElementById("awayCountry");
-        const homePointsElement = document.getElementById("homePointsTextbox").value;
-        const awayPointsElement = document.getElementById("awayPointsTextbox").value;
-        const matchStatusElement = document.getElementById("matchStatusDropdown").value;
+        let homeCountryElement = document.getElementById("homeCountry");
+        let awayCountryElement = document.getElementById("awayCountry");
+        let homePointsElement = document.getElementById("homePointsTextbox");
+        let awayPointsElement = document.getElementById("awayPointsTextbox");
+        let matchStatusElement = document.getElementById("matchStatusDropdown");
 
-        homeCountryElement = matchData.home_team + " Points";
-        awayCountryElement = matchData.away_team + " Points";
-        homePointsElement = matchData.home_points_scored;
-        awayPointsElement = matchData.away_points_scored;
-        matchStatusElement = matchData.status;
+        homeCountryElement.textContent = `${matchData.home_team}'s Points`;
+        awayCountryElement.textContent = `${matchData.away_team}'s Points`;
+        homePointsElement.value = Number(matchData.home_points_scored);
+        awayPointsElement.value = Number(matchData.away_points_scored);
+        matchStatusElement.value = matchData.status;
 
     } catch {
-        console.error("Error loading match info", error);
+        console.log("Error loading match info");
     }
 }
 
@@ -44,12 +44,12 @@ async function updateMatchInfo() {
     const awayPointsUpdated = document.getElementById("awayPointsTextbox").value;
     const matchStatusUpdated = document.getElementById("matchStatusDropdown").value;
     try{
-        await setDoc(doc(db, "Match", id), {
-        home_points_scored: homePointsUpdated,
-        away_points_scored: awayPointsUpdated,
+        await updateDoc(doc(db, "Match", id), {
+        home_points_scored: Number(homePointsUpdated),
+        away_points_scored: Number(awayPointsUpdated),
         status: matchStatusUpdated
     });} catch{
-        console.error("Error updating document to firestore", error)
+        console.error("Error updating document to firestore")
     }
 
     
