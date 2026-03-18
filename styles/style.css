@@ -180,7 +180,7 @@
 }
 
 
-/* Bottom Navigation Layout */
+/* ======Bottom Navigation Layout======*/
 .nav-item {
   display: flex;
   flex-direction: column;
@@ -205,6 +205,9 @@
   height: 24px;
   fill: currentColor;
 }
+
+
+
 
 /* Leaderboard header */
 h1.leader{

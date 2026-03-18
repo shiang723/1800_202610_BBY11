@@ -25,6 +25,7 @@
     rel="stylesheet">
     <!-- Link to stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bottomNav.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
 </head>
 
@@ -87,104 +88,11 @@
 
     <!-- Live Matches -->
     <h1 class="section-title">Live Matches</h1>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">ARG</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="live-pill">🔴 LIVE</div>
-            <div class="score-row">
-                <span>3</span>
-                <span>vs</span>
-                <span>0</span>
-            </div>
-            <div class="live-time">90' +6</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">CAN</div>
-        </div>
-    </div>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">ARG</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="live-pill">🔴 LIVE</div>
-            <div class="score-row">
-                <span>1</span>
-                <span>vs</span>
-                <span>1</span>
-            </div>
-            <div class="live-time">45' +3</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">BRA</div>
-        </div>
-    </div>
+    <div id="live-matches"></div>
 
     <!-- Upcoming Matches -->
     <h1 class="section-title upcoming-title">Upcoming Matches</h1>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">MEX</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="upcoming-vs">vs</div>
-            <div class="match-date">June 11, 26 &nbsp; 12:00 P.M.</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">RSA</div>
-        </div>
-    </div>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">KOR</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="upcoming-vs">vs</div>
-            <div class="match-date">June 11, 26 &nbsp; 7:00 P.M.</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">TBD</div>
-        </div>
-    </div>
-
-    <div class="match-card">
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">CAN</div>
-        </div>
-
-        <div class="match-middle">
-            <div class="upcoming-vs">vs</div>
-            <div class="match-date">June 12, 26 &nbsp; 12:00 P.M.</div>
-        </div>
-
-        <div class="team-side">
-            <span class="material-symbols-outlined flag-icon">flag</span>
-            <div class="team-name">TBD</div>
-        </div>
-    </div>
+    <div id="upcoming-matches"></div>
 
 </div>
 

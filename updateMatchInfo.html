@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Leaderboard</title>
+    <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!-- Required meta tags -->
@@ -15,13 +15,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <!-- Font libraries -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=home,news,videocam"
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <!-- Link to stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/bottomNav.css">
+    <script type="module" src="./src/bottomNavLoader.js"></script>
 </head>
 
 <body>
@@ -30,7 +33,7 @@
     <!------------------------------>
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="login.html">EXTRA TIME</a>
+            <a class="navbar-brand">EXTRA TIME</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -42,9 +45,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Profile
+                            About Betting
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Bet on a Match</a></li>
                             <li><a class="dropdown-item" href="#">View Bets</a></li>
                             <li>
@@ -56,7 +59,7 @@
                 </ul>
                 <div class="navbar-nav ms-auto d-flex align-items-center">
                     <!-- || Points icon || -->
-                    <a class="nav-link nav-points-link" href="Profile.html" aria-label="View Points">
+                    <a class="nav-link nav-points-link" aria-label="View Points">
                         <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon"
                             class="nav-points-img">
                         <span class="badge nav-points-badge">1000</span>
@@ -72,71 +75,40 @@
                 </div>
             </div>
             <!--|| This is the end of the profile dropdown code || -->
+
         </div>
     </nav>
-    <!-- || This is the beginning of the leaderboard || -->
-    <br>
-    <h1 class="leader">Player Leaderboard</h1>
-    <table>
-        <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Points</th>
-        </tr>
-        <tr>
-            <td class="rank">1st</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td class="rank">2nd</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td class="rank">3rd</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-    </table>
-    <!-- || This is the end of the leaderboard || -->
+
+    <div>
+        <form>
+            <div>
+                <label for="homePointsTextbox" id="homeCountry"></label>
+                <input type="number" min="0" id="homePointsTextbox">
+            </div>
+            <div>
+                <label for="awayPointsTextbox" id="awayCountry"></label>
+                <input type="number" min="0" id="awayPointsTextbox">
+            </div>
+            <div>
+                <label for="matchStatusDropdown" id="matchStatusLabel">Match Status:</label>
+                <select name="selectStatus" id="matchStatusDropdown">
+                    <option value="live">Live</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+            <div>
+                <label for="cancelUpdate" id="cancelUpdateLabel"></label>
+                <input type="button" id="cancelUpdate">
+            </div>
+            <div>
+                <label for="saveUpdateInfo" id="saveButtonLabel"></label>
+                <input type="submit" id="saveUpdateInfo">
+            </div>
+        </form>
+    </div>
 
 
+    <div id="bottom-nav"></div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -144,10 +116,7 @@
 
     <!-- Link to scripts of your own -->
     <script type="module" src="./src/main.js"></script>
-    <div id="bottom-nav"></div>
-    <script type="module" src="./src/bottomNavLoader.js"></script>
-
-
+    <script type="module" src="./src/updateMatchInfo.js"></script>
 </body>
 
 </html>

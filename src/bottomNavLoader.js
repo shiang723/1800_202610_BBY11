@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("nav-stats")?.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "stats.html";
+      window.location.href = "Match_Details.html";
     });
 
     document.getElementById("nav-home")?.addEventListener("click", (e) => {

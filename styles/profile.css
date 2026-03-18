@@ -1,3 +1,8 @@
+#exit_button {
+        text-decoration: none;
+        color: #000000;
+}
+
 .material-symbols-outlined {
         display: flex;
         justify-content: flex-end;
@@ -36,7 +41,7 @@
         font-size: 24pt;
 }
 
-#logoutButton {
+#logoutButtonWrapper {
         display: flex;
         justify-content: flex-end;
         padding-right: 3%;
