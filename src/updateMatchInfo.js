@@ -1,45 +1,57 @@
-import { doc, setDoc, getDoc } from "firebase/firestore"; 
-import { db } from '/src/firebaseConfig.js'; 
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import { db } from './firebaseConfig.js';
 
-document.getElementById("updateInfoButton").addEventListener("click", () =>{
-    getMatchInfo(match);
-})
 
-document.getElementById("saveUpdateInfo").addEventListener("click", () =>{
-    updateMatchInfo(match);
+function getDocIdFromUrl() {
+    const params = new URL(window.location.href).searchParams;
+    return params.get("docID");
+}
+
+document.getElementById("saveUpdateInfo").addEventListener("click", () => {
+    updateMatchInfo();
 })
-document.getElementById("cancelUpdate").addEventListener("click", () =>{
+document.getElementById("cancelUpdate").addEventListener("click", () => {
+    console.log("Cancelled update")
     history.back()
 })
 
-async function getMatchInfo(match) {
-    const matchDoc = await getDoc(doc(db, "Match", match.uid));
-    if (matchDoc.exists()){
+async function getMatchInfo() {
+    const id = getDocIdFromUrl();
+    try {
+        const matchDoc = await getDoc(doc(db, "Match", id));
+        const matchData = matchDoc.data();
+
         const homeCountryElement = document.getElementById("homeCountry");
         const awayCountryElement = document.getElementById("awayCountry");
         const homePointsElement = document.getElementById("homePointsTextbox").value;
         const awayPointsElement = document.getElementById("awayPointsTextbox").value;
         const matchStatusElement = document.getElementById("matchStatusDropdown").value;
 
-        homeCountryElement = matchDoc.home_team + " Points";
-        awayCountryElement = matchDoc.away_team + " Points";
-        homePointsElement = matchDoc.home_points_scored;
-        awayPointsElement = matchDoc.away_points_scored;
-        matchStatusElement = matchDoc.status;
-      
-    } else {
-    console.log("matchID not found in firestore");
+        homeCountryElement = matchData.home_team + " Points";
+        awayCountryElement = matchData.away_team + " Points";
+        homePointsElement = matchData.home_points_scored;
+        awayPointsElement = matchData.away_points_scored;
+        matchStatusElement = matchData.status;
+
+    } catch {
+        console.error("Error loading match info", error);
     }
 }
 
-async function updateMatchInfo(match) {
+async function updateMatchInfo() {
+    const id = getDocIdFromUrl();
     const homePointsUpdated = document.getElementById("homePointsTextbox").value;
     const awayPointsUpdated = document.getElementById("awayPointsTextbox").value;
     const matchStatusUpdated = document.getElementById("matchStatusDropdown").value;
-
-    await setDoc(doc(db, "Match", match.uid),{
+    try{
+        await setDoc(doc(db, "Match", id), {
         home_points_scored: homePointsUpdated,
         away_points_scored: awayPointsUpdated,
         status: matchStatusUpdated
-    });
+    });} catch{
+        console.error("Error updating document to firestore", error)
+    }
+
+    
 }
+document.addEventListener('DOMContentLoaded', getMatchInfo());
