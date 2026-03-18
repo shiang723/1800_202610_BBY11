@@ -49,7 +49,7 @@ async function payOutUser() {
                         payoutPoints = Math.floor((unpaidBet.amount/(match.away_pool))*total_pool)
                     }
                     else{
-                        console.error("No payout amount found", eror)
+                        console.error("No payout amount found", error)
                     }
                     setDoc(userDoc, {points: payoutPoints+userPoints})
                     setDoc(doc, {payment_status: "paid"})
