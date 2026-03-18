@@ -23,86 +23,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <!-- Link to stylesheets -->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/updateMatchInfo.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
+    <script type="module" src="./src/header.js"></script>
 </head>
 
 <body>
     <!------------------------------>
     <!-- Navbar using Bootstrap -->
     <!------------------------------>
-    <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand">EXTRA TIME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--|| This is the beginning of the profile dropdown code || -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            About Betting
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Bet on a Match</a></li>
-                            <li><a class="dropdown-item" href="#">View Bets</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Contact Help</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="navbar-nav ms-auto d-flex align-items-center">
-                    <!-- || Points icon || -->
-                    <a class="nav-link nav-points-link" aria-label="View Points">
-                        <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon"
-                            class="nav-points-img">
-                        <span class="badge nav-points-badge">1000</span>
-                    </a>
-                    <!-- || Profile icon || -->
-                    <span class="navbar-text me-3 navbar-attribution">
-                        <a href="profile.html" title="user square icons" class="text-decoration-none text-muted">
-                        </a>
-                    </span>
-                    <a class="nav-link p-0" href="profile.html" aria-label="User Profile">
-                        <img src="./images/user-square.png" alt="User Profile" class="nav-profile-img">
-                    </a>
-                </div>
-            </div>
-            <!--|| This is the end of the profile dropdown code || -->
-
-        </div>
-    </nav>
-
+    <div id="Header"></div>
     <div>
-        <form>
-            <div>
+        <form id="updateInfoForm">
+            <div class="formElement">
                 <label for="homePointsTextbox" id="homeCountry"></label>
-                <input type="number" min="0" id="homePointsTextbox">
+                <input type="number" min="0" id="homePointsTextbox" required>
             </div>
-            <div>
+            <div class="formElement">
                 <label for="awayPointsTextbox" id="awayCountry"></label>
-                <input type="number" min="0" id="awayPointsTextbox">
+                <input type="number" min="0" id="awayPointsTextbox" required>
             </div>
-            <div>
+            <div class="formElement">
                 <label for="matchStatusDropdown" id="matchStatusLabel">Match Status:</label>
-                <select name="selectStatus" id="matchStatusDropdown">
+                <select class="form-select" name="selectStatus" id="matchStatusDropdown"
+                    aria-label="Select Match Status" required>
+                    <option value="upcoming">Upcoming</option>
                     <option value="live">Live</option>
                     <option value="done">Done</option>
                 </select>
             </div>
-            <div>
-                <label for="cancelUpdate" id="cancelUpdateLabel"></label>
-                <input class="btn btn-secondary w-25" type="button" id="cancelUpdate" value="Cancel">
-            </div>
-            <div>
-                <label for="saveUpdateInfo" id="saveButtonLabel"></label>
-                <input type="button" class="btn btn-dark w-25" id="saveUpdateInfo" value="Save">
+            <div class="formButtons">
+                <div class="formElement">
+                    <label for="cancelUpdate" id="cancelUpdateLabel"></label>
+                    <input class="btn btn-secondary" type="button" id="cancelUpdate" value="Cancel">
+                </div>
+                <div class="formElement">
+                    <label for="saveUpdateInfo" id="saveButtonLabel"></label>
+                    <input type="button" class="btn btn-dark" id="saveUpdateInfo" value="Save"></button>
+                </div>
             </div>
         </form>
     </div>
