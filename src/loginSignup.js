@@ -94,7 +94,7 @@ function initAuthUI() {
         try {
             await loginUser(email, password);
             await payOutUser()
-            //location.href = redirectUrl; 
+            location.href = redirectUrl; 
         } catch (err) {
             showError(authErrorMessage(err));
             console.error(err);
