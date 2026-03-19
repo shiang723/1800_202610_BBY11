@@ -15,6 +15,8 @@ import {
     authErrorMessage,
 } from './authentication.js';
 
+import {payOutUser} from "./app.js"
+
 
 // --- Login and Signup Page ---
 // Handles toggling between Login/Signup views and form submits
@@ -91,7 +93,8 @@ function initAuthUI() {
         setSubmitDisabled(loginForm, true);
         try {
             await loginUser(email, password);
-            location.href = redirectUrl;
+            await payOutUser()
+            location.href = redirectUrl; 
         } catch (err) {
             showError(authErrorMessage(err));
             console.error(err);

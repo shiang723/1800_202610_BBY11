@@ -28,7 +28,7 @@ const pointsInputH = document.getElementById("homePointsTextbox");
 const pointsInputA = document.getElementById("awayPointsTextbox");
 const statusSelect = document.getElementById("matchStatusDropdown");
 
-async function getMatchInfo(homeCountryLabel, awayCountryLabel, homePointsInput, awayPointsInput, matchStatusSelect) {
+export async function getMatchInfo(homeCountryLabel, awayCountryLabel, homePointsInput, awayPointsInput, matchStatusSelect) {
     const id = getDocId();
     try {
         const matchDoc = await getDoc(doc(db, "Match", id));
