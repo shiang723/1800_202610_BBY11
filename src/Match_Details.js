@@ -125,13 +125,12 @@ function updateStat(statName, argVal, braVal) {
 // Example usage in your simulator:
 // updateStat('shots', 5, 2);
 
-//Update Match button 
-// 1. Move your logic into a reusable function
+// --- Update Match Button Logic ---
+
 function playNextMove() {
   let nextArg = scoreArg;
   let nextBra = scoreBra;
 
-  // Randomly pick ONE team to score
   if (Math.random() > 0.5) {
     nextArg++;
   } else {
@@ -140,8 +139,8 @@ function playNextMove() {
   
   updateScore(nextArg, nextBra);
 
-  // Randomize the other stats
-  const otherStats = ['possession', 'fouls', 'yellow-cards', 'red-cards'];
+  // Match the IDs exactly as they appear in your HTML
+  const otherStats = ['fouls', 'ycard', 'rcard']; 
   const randomStat = otherStats[Math.floor(Math.random() * otherStats.length)];
 
   let argEl = document.getElementById(`val-${randomStat}-arg`);
@@ -158,13 +157,31 @@ function playNextMove() {
     }
   }
 
-  // Stop logic
   if (nextArg >= 11 || nextBra >= 11) {
-    console.log("Match Ended");
-    document.getElementById('update-btn').disabled = true; // Disable button at end
-    document.getElementById('update-btn').innerText = "MATCH OVER";
+    const btn = document.getElementById('update-btn');
+    btn.disabled = true;
+    btn.innerText = "MATCH OVER";
   }
 }
 
-// 2. Attach the function to your new button
-document.getElementById('update-btn').addEventListener('click', playNextMove);
+// ATTACH THE REDIRECT LOGIC
+document.getElementById('update-btn').addEventListener('click', () => {
+    // 1. Run the simulator logic (optional, remove if you only want to redirect)
+    playNextMove();
+
+    // 2. Get the Match ID from the URL (e.g., Match_Details.html?docID=XYZ)
+    const params = new URLSearchParams(window.location.search);
+    const matchId = params.get("docID");
+
+    if (matchId) {
+        // Store it so updateMatchInfo.html can read it
+        localStorage.setItem('matchDocID', matchId);
+        
+        // 3. Redirect to the update page
+        window.location.href = 'updateMatchInfo.html';
+    } else {
+        console.error("No docID found in URL. Make sure the URL looks like: Match_Details.html?docID=yourIDhere");
+        // Fallback: just go to the page anyway
+        window.location.href = 'updateMatchInfo.html';
+    }
+});
