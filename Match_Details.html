@@ -19,28 +19,125 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Rubik+Distressed&display=swap" rel="stylesheet">
-    <!-- Link to stylesheets -->
+
     <script type="module" src="./src/bottomNavLoader.js"></script>
     <script type="module" src="./src/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <!-- Then load your match details script -->
+    <script type="module" src="src/Match_Details.js"></script>
+
+    <!-- Link to stylesheets -->
+    <link rel="stylesheet" href="styles/Match_Details.css">
 </head>
 
 <body>
 
 
-<!------------------------>
-<!-- Header/Navbar code -->
-<!------------------------>
+    <!------------------------>
+    <!-- Header/Navbar code -->
+    <!------------------------>
     <div id="Header"></div>
 
 
-       <!------------------------------>
-    <!-- Your HTML Layout go here -->
+    <!----------------------------->
+    <!-- Scoreboard code section -->
+    <!----------------------------->
+    <div class="scoreboard">
+
+        <div id="goal-toast" class="goal-toast">GOAL!</div>
+    <!-- Status Header -->
+  <div class="status">
+    <span class="live-indicator">● LIVE</span>
+  </div>
+
+    <!-- Main Content -->
+  <div class="match-content">
+    <div class="team">
+      <img src="images/flag.png" class="flag-icon" alt="Flag">
+      <div class="team-name">ARG</div>
+    </div>
+
+    <div class="score-container">
+      <span id="score-arg">3</span>
+      <span class="vs">vs</span>
+      <span id="score-bra">1</span>
+    </div>
+
+    <div class="team">
+      <img src="images/flag.png" class="flag-icon" alt="Flag">
+      <div class="team-name">BRA</div>
+    </div>
+  </div>
+
+    <!-- Footer Info -->
+  <div class="match-info">
+    <div class="time">46:38 <span class="added-time">+6</span></div>
+    <div class="group-label">Group B</div>
+  </div>
+</div>
+    <!---------------------------->
+    <!-- End of Scoreboard code -->
+    <!---------------------------->
+
+    <div class="stats-section">
+    <!-- Header Labels -->
+    <div class="stats-header">
+        <span class="team-label">ARG</span>
+        <span class="team-label">BRA</span>
+    </div>
+
+    <!-- Stat Row: Shots on Goal -->
+    <div class="stat-item">
+        <div class="stat-title">SHOTS ON GOAL</div>
+        <div class="stat-bar-container">
+            <div id="fill-shots" class="bar-fill" style="width: 75%;"></div>
+            <span id="val-shots-arg">3</span>
+            <span id="val-shots-bra">1</span>
+        </div>
+    </div>
+
+    <!-- Stat Row: Fouls -->
+    <div class="stat-item">
+        <div class="stat-title">FOULS</div>
+        <div class="stat-bar-container">
+            <div id="fill-fouls" class="bar-fill" style="width: 40%;"></div>
+            <span id="val-fouls-arg">8</span>
+            <span id="val-fouls-bra">12</span>
+        </div>
+    </div>
+
+    <!-- Repeat for Yellow Cards, etc. -->
+     <div class="stat-item">
+        <div class="stat-title">YELLOW CARDS</div>
+        <div class="stat-bar-container">
+            <div id="fill-fouls" class="bar-fill" style="width: 40%;"></div>
+            <span id="val-ycard-arg">8</span>
+            <span id="val-ycard-bra">12</span>
+        </div>
+    </div>
+
+    <!-- Stat Row: Fouls -->
+    <div class="stat-item">
+        <div class="stat-title">RED CARDS</div>
+        <div class="stat-bar-container">
+            <div id="fill-fouls" class="bar-fill" style="width: 40%;"></div>
+            <span id="val-rcard-arg">8</span>
+            <span id="val-rcard-bra">12</span>
+        </div>
+    </div>
+
+</div>
+    <!---------------------------->
+    <!-- End of Scoreboard code -->
+    <!---------------------------->
+    <div class="controls">
+        <button id="update-btn" class="update-button">Update Match</button>
+    </div>
+
+
     <!------------------------------>
     <!-- Stuff for body goes here -->
     <!------------------------------>
-
-
-
     <div id="bottom-nav"></div>
 
     <!---------------------------------------------->

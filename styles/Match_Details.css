@@ -1,0 +1,232 @@
+/* Container & General Styles */
+.scoreboard {
+  background: linear-gradient(to bottom, #1c2541 50%, #5BC0BE 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  
+  /* Size Adjustments to take up the Hero space */
+  width: 100%;            /* Fills the horizontal width */
+  min-height: 400px;     
+  margin: 0;              /* Removes the center-aligned spacing */
+  padding: 80px 0 0px 0; 
+  color: #ffffff;   
+  
+  /* Flexbox to keep everything centered in the larger space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Status Header */
+.status {
+  margin-bottom: 20px;
+}
+
+.live-indicator {
+  background: #fff;
+  color: #ff0000;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+.flag-icon {
+  width: 70px ; 
+  height: 55px;
+  object-fit: contain; /* Prevents stretching */
+  display: inline-block;
+}
+
+.vs {
+  color: #ffffff;
+  opacity: 0.8; /* Makes the 'vs' slightly dimmer than the scores */
+}
+
+.match-content {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;          
+}
+
+.team {
+  width: 80px;
+  overflow: hidden; /* Clips anything that tries to be too big */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-name {
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+
+/* Score Section */
+.score-container {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 72px; /* Large bold numbers */
+  font-weight: 400;
+}
+
+.vs {
+  font-size: 52px;
+  margin: 0 10px;
+}
+
+/* Footer Info */
+.match-info {
+  margin-top: 20px;
+}
+
+.time {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.added-time {
+  color: #c9c9c9;
+  margin-left: 4px;
+}
+
+.group-label {
+  font-size: 20px;
+  font-weight: 400;
+  color: #e1e1e1;
+}
+
+#score-arg, #score-bra {
+  display: inline-block; /* REQUIRED for the animation to work */
+  transition: transform 0.2s ease;
+  color: white;
+  font-size: 72px;
+}
+
+.goal-toast {
+  position: absolute;
+  top: 100px; /* Adjust this so it doesn't cover the LIVE button */
+  background: #ffcc00;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.show-goal {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* ---------------------------------------------- */
+
+.stats-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #5BC0BE 50%, #C9F0FF 100%);
+    font-family: sans-serif;
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    padding: 10px 40px;
+}
+
+.team-label {
+    font-size: 32px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.stat-item {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.stat-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.stat-bar-container {
+    background-color: #3f408f;
+    color: #ffffff;
+    height: 65px;
+    border-radius: 45px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    overflow: hidden; /* Keeps the fill inside the rounded corners */
+}
+
+.bar-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #03045E; /* Darker gray for the winning side */
+    z-index: 1;
+    transition: width 0.5s ease-in-out;
+}
+
+.stat-bar-container span {
+    position: relative;
+    z-index: 2; /* Puts numbers on top of the gray bar */
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  /* This ensures the button sits on the same ombre background */
+  background: #C9F0FF; 
+}
+
+.update-button {
+  background-color: #ffffff;
+  color: #1C2541;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.update-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background-color: #f0f0f0;
+}
+
+.update-button:active {
+  transform: translateY(-1px);
+}
