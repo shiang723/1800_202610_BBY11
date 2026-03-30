@@ -9,7 +9,7 @@ function getDocId() {
     }
     else {
         const params = new URL(window.location.href).searchParams;
-        return params.get("docID");
+        return params.get("matchDocID");
     }
 }
 
