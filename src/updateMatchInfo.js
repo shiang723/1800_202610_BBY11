@@ -16,6 +16,7 @@ function getDocId() {
 document.getElementById("saveUpdateInfo").addEventListener("click", async () => {
     await updateMatchInfo();
     await getMatchInfo();
+    location.reload();
 })
 document.getElementById("cancelUpdate").addEventListener("click", () => {
     console.log("Cancelled update")

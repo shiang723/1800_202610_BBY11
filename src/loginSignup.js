@@ -110,7 +110,7 @@ function initAuthUI() {
         const name = document.querySelector('#signupName')?.value?.trim() ?? '';
         const email = document.querySelector('#signupEmail')?.value?.trim() ?? '';
         const password = document.querySelector('#signupPassword')?.value ?? '';
-        const country = document.querySelector('#signupCountry')?.value ?? '';
+        const country = document.querySelector('#country-select')?.value ?? '';
         if (!name || !email || !password || !country) {
             showError('Please fill in name, email, password, and country.');
             return;

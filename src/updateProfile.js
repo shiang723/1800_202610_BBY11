@@ -3,8 +3,11 @@ import { db } from '/src/firebaseConfig.js';        //Firebase authentication co
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { onAuthReady } from '/src/authentication.js';  //Perform logout action  
 
+
+//Get and load the user information on updateProfile.html page.
 async function getUserInfo() {
 
+    //The elements for each field on the html page.
     const emailElement = document.querySelector("#email");
     const userCountryElement = document.getElementById('country-select');
     const userProfilePicture = document.getElementById('profileImage');
@@ -24,11 +27,11 @@ async function getUserInfo() {
                 const profileImg = userDoc.exists() ?
                     "data:image/png;base64," + userDoc.data().profileImage :
                     "/images/user-square.png";
-                // Update the welcome message with their name/email.
+
+                // Update the elements with the data fetched from Firestore.
                 if (emailElement) {
                     emailElement.innerHTML = String(email);
                 }
-
                 if (userCountryElement) {
                     userCountryElement.value = country;
                 }
@@ -54,7 +57,7 @@ async function getUserInfo() {
 //---------------------------------------------------
 // Function to save the Base64 image to Firestore
 // as a key value pair in the user's document. 
-// This function is triggered when a image is selected.
+// (Template from Carly's tech tips (COMP 1800))
 //---------------------------------------------------
 async function saveProfileImage(base64String) {
     // Wait for the currently signed-in user
@@ -79,6 +82,7 @@ async function saveProfileImage(base64String) {
 // This function is an Event Listener for the file (image) picker
 // When an image is chosen, it will then save that image into the
 // user's document in Firestore
+// (Template from Carly's tech tips (COMP 1800))
 //-------------------------------------------------------------
 
 function uploadImage() {
@@ -103,21 +107,31 @@ function uploadImage() {
     }
 }
 
-
+// Listener for the Save button on the updateProfile.html page
+// On click, update Firestore with the values on the page.
 document.getElementById("saveUpdateInfo").addEventListener("click", async () => {
     uploadImage();
     await updateProfileInfo();
     getUserInfo();
+    window.alert("Your profile has been updated");
 })
+
+// Listener for the Cancel button on the updateProfile.html page
+// On click, go back to previous page.
 document.getElementById("cancelUpdate").addEventListener("click", () => {
-    console.log("Cancelled update")
+    console.log("Cancelled update")  
     history.back()
 })
 
+// update the user information in Firestore.
 async function updateProfileInfo() {
+    
+    //The elements for each relevant field on the html page.
     const country = document.getElementById('country-select').value;
     const accountType =  document.querySelector(`input[name="accountType"]:checked`).value;
     var admin;
+
+    // Check which account type is checked and assign boolean to admin.
     if (accountType == "admin") {
         admin = true;
     } else {
