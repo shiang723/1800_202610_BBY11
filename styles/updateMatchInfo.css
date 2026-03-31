@@ -9,6 +9,10 @@
     height: 80px;
 }
 
+#Header #point-display {
+    margin-top: 0.75rem;
+}
+
 .pageTitle {
     display: flex;
     font-weight: bold;
@@ -24,7 +28,6 @@
     margin: 2%;
     display: flex;
     flex-direction: column;
-    ;
 }
 
 .formButtons {
