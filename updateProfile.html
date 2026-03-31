@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="styles/bottomNav.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
     <script type="module" src="./src/header.js"></script>
+    <script type="module" src="./components/countrySelect.js"></script>
 </head>
 
 <body>
@@ -45,12 +46,9 @@
                 <input type="file" id="profilePictureUploader" accept="image/*" />
             </div>
             <div class="formElement">
-                <label for="teamSelect" id="teamSelectLabel">Team You Support:</label>
-                <select class="form-select" name="selectStatus" id="teamSelect" aria-label="Select Match Status"
-                    required>
-                    <option value="none">None</option>
-                    <option value="canada">Canada</option>
-                </select>
+                <label for="country-select" id="teamSelectLabel">Team You Support:</label>
+                <country-select localName="teamSelect" className="form-select" aria-label="Select Team" required>
+                </country-select>
             </div>
             <div class="formElement">
                 <p class="radioHeader">Account Type:</p>

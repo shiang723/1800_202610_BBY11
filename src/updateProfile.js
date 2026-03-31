@@ -6,7 +6,7 @@ import { onAuthReady } from '/src/authentication.js';  //Perform logout action
 async function getUserInfo() {
 
     const emailElement = document.querySelector("#email");
-    const userCountryElement = document.getElementById('teamSelect');
+    const userCountryElement = document.getElementById('country-select');
     const userProfilePicture = document.getElementById('profileImage');
 
     onAuthReady(async (user) => {
@@ -30,7 +30,7 @@ async function getUserInfo() {
                 }
 
                 if (userCountryElement) {
-                    userCountryElement.value = country.toLowerCase();
+                    userCountryElement.value = country;
                 }
                 if (userProfilePicture) {
                     document.getElementById("profileImage").src = profileImg;
@@ -115,7 +115,7 @@ document.getElementById("cancelUpdate").addEventListener("click", () => {
 })
 
 async function updateProfileInfo() {
-    const country = document.getElementById('teamSelect').value;
+    const country = document.getElementById('country-select').value;
     const accountType =  document.querySelector(`input[name="accountType"]:checked`).value;
     var admin;
     if (accountType == "admin") {
