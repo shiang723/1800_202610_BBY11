@@ -82,9 +82,9 @@ export async function payOutUser() {
 export async function isAdmin(){
     var user = auth.currentUser;
     if (!user) return;
-
+   
     try {
-         const userRef = doc(db, "users", user.uid);
+         const userRef = await getDoc(doc(db, "users", user.uid));
          const userData = userRef.data();
          return userData.admin;
     } catch (error) {

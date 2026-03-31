@@ -40,6 +40,7 @@
             </div>
             <div class="formElement">
                 <label for="profilePictureUploader" id="pictureLabel">Profile Picture:</label>
+                <span id=profiePicture></span>
                 <img id="profileImage" src="/images/user-square.png" alt="Profile Picture" width="50" height="50">
                 <br>
                 <input type="file" id="profilePictureUploader" accept="image/*" />
@@ -57,12 +58,12 @@
                 <div class="radioButtonField">
                     <span class="radioButton" id="regularRadio">
                         <label for="regularChoice" id="regularLabel">Regular User
-                            <input type="radio" id="regularChoice" value="regular" name="accountType" required>
+                            <input type="radio" id="regularChoice" value="regular" name="amountType" required>
                         </label>
                     </span>
                     <span class="radioButton" id="adminRadio">
                         <label for="adminChoice" id="adminLabel">Admin
-                            <input type="radio" id="adminChoice" value="admin" name="accountType" required>
+                            <input type="radio" id="adminChoice" value="admin" name="amountType" required>
                         </label>
                     </span>
                 </div>
