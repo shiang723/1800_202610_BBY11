@@ -18,7 +18,8 @@
     <!-- Font libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Rubik+Distressed&display=swap"
+        rel="stylesheet">
     <!-- Link to stylesheets -->
     <link rel="stylesheet" href="styles/header.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
@@ -30,33 +31,42 @@
     <!-- Navbar using Bootstrap -->
     <!------------------------------>
     <!---------------------------------------->
-<!-- Header for the navbar and Filter -->
-<!---------------------------------------->
-<header class="fixed-top">
-    <!-- Top Gray Navbar -->
-    <nav class="navbar-top">
-        <div class="logo-container">
-    <!-- Logo -->
-            <img src="images/Icon.png" alt="clock" class="logo-img">
-            <h1 class="ET">Extra Time</h1>
-        </div>
-    <!-- Points (Just a place holder) -->
-        <div class="user-info">
-            <div class="points">
-                <span class="p-icon">P</span> 1000
+    <!-- Header for the navbar and Filter -->
+    <!---------------------------------------->
+    <header class="fixed-top">
+        <!-- Top Gray Navbar -->
+        <nav class="navbar-top">
+            <a class="nav-link p-0" href="main.html">
+                <div class="logo-container">
+                    <!-- Logo -->
+                    <img src="images/Icon.png" alt="clock" class="logo-img">
+                    <h1 class="ET">Extra Time</h1>
+
+                </div>
+            </a>
+            <!-- Points (Just a place holder) -->
+
+            <div class="user-info">
+                <a class="nav-link p-0" href="betting-info.html" aria-label="Points_info">
+                    <div class="points">
+                        <span class="p-icon">P</span>
+                        <p id="point-display"></p>
+                    </div>
+                </a>
+                <!-- Profile (Just a place holder) -->
+                <a class="nav-link p-0" href="profile.html" aria-label="User Profile">
+                    <img src="images/Profile.png" alt="User" class="profile-pic">
+                </a>
             </div>
-    <!-- Profile (Just a place holder) -->
-            <img src="images/Profile.png" alt="User" class="profile-pic">
-        </div>
-    </nav>
-</header>
-<!-------------------------->
-<!-- End of Header code -->
-<!-------------------------->
+        </nav>
+    </header>
+    <!-------------------------->
+    <!-- End of Header code -->
+    <!-------------------------->
 
 
 
-       <!------------------------------>
+    <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
@@ -72,7 +82,7 @@
 
     <!-- Link to scripts of your own -->
     <script type="module" src="./src/main.js"></script>
-    
+
 </body>
 
 </html>

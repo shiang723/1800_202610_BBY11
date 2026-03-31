@@ -9,12 +9,13 @@ function getDocId() {
     }
     else {
         const params = new URL(window.location.href).searchParams;
-        return params.get("docID");
+        return params.get("matchDocID");
     }
 }
 
 document.getElementById("saveUpdateInfo").addEventListener("click", async () => {
     await updateMatchInfo();
+    await getMatchInfo();
     location.reload();
 })
 document.getElementById("cancelUpdate").addEventListener("click", () => {
@@ -60,8 +61,8 @@ export async function getMatchInfo(homeCountryLabel, awayCountryLabel, homePoint
         awayPointsElement.value = Number(matchData.away_points_scored);
         matchStatusElement.value = matchData.status;
 
-    } catch {
-        console.log("Error loading match info");
+    } catch(error) {
+        console.log("Error loading match info: " + error );
     }
 }
 
@@ -89,8 +90,9 @@ async function updateMatchInfo() {
                 status: matchStatusUpdated
             });
             window.alert(`Sucessfully updated information for match`)
-        } catch {
-            console.error("Error updating document to firestore")
+        } catch (error) {
+            window.alert(error)
+            console.error("Error updating document to firestore: " + error)
         }
     } else {
         window.alert("One of the input does not have a value. Please make sure each input has a valid value before saving.")

@@ -67,7 +67,8 @@ export async function signupUser(name, email, password, country) {
       name: name,
       email: email,
       country: country,
-      point: 1000     // Default value
+      point: 1000,   // Default value
+      admin: false //Default value
     });
     console.log("Firestore user document created successfully!");
 } catch (error) {

@@ -76,3 +76,18 @@ export async function payOutUser() {
         console.error("Payout process failed:", error)
     }
 }
+
+
+// Check if user is an admin.
+export async function isAdmin(){
+    var user = auth.currentUser;
+    if (!user) return;
+   
+    try {
+         const userRef = await getDoc(doc(db, "users", user.uid));
+         const userData = userRef.data();
+         return userData.admin;
+    } catch (error) {
+        console.error("Error with fetching user admin status:", error)
+    }
+}

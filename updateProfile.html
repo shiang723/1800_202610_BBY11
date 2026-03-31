@@ -23,36 +23,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <!-- Link to stylesheets -->
-    <link rel="stylesheet" href="styles/updateMatchInfo.css">
+    <link rel="stylesheet" href="styles/updateProfile.css">
     <link rel="stylesheet" href="styles/bottomNav.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
     <script type="module" src="./src/header.js"></script>
+    <script type="module" src="./components/countrySelect.js"></script>
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Navbar using Bootstrap -->
-    <!------------------------------>
     <div id="Header"></div>
-    <div>
-        <div class="pageTitle">Update Match Information</div>
-        <form id="updateInfoForm">
+    <div id="profileUpdatePage">
+        <p class="pageTitle">Update Profile</p>
+        <form id="updateProfileForm">
             <div class="formElement">
-                <label for="homePointsTextbox" id="homeCountry"></label>
-                <input type="number" min="0" id="homePointsTextbox" required>
+                <p class="radioHeader">Email:</p>
+                <p id="email"></p>
             </div>
             <div class="formElement">
-                <label for="awayPointsTextbox" id="awayCountry"></label>
-                <input type="number" min="0" id="awayPointsTextbox" required>
+                <label for="profilePictureUploader" id="pictureLabel">Profile Picture:</label>
+                <img id="profileImage" src="/images/user-square.png" alt="Profile Picture" width="50" height="50">
+                <br>
+                <input type="file" id="profilePictureUploader" accept="image/*" />
             </div>
             <div class="formElement">
-                <label for="matchStatusDropdown" id="matchStatusLabel">Match Status:</label>
-                <select class="form-select" name="selectStatus" id="matchStatusDropdown"
-                    aria-label="Select Match Status" required>
-                    <option value="upcoming">Upcoming</option>
-                    <option value="live">Live</option>
-                    <option value="done">Done</option>
-                </select>
+                <label for="country-select" id="teamSelectLabel">Team You Support:</label>
+                <country-select localName="teamSelect" className="form-select" aria-label="Select Team" required>
+                </country-select>
+            </div>
+            <div class="formElement">
+                <p class="radioHeader">Account Type:</p>
+                <div class="radioButtonField">
+                    <span class="radioButton" id="regularRadio">
+                        <label for="regularChoice" id="regularLabel">Regular User
+                            <input type="radio" id="regularChoice" value="regular" name="accountType" required>
+                        </label>
+                    </span>
+                    <span class="radioButton" id="adminRadio">
+                        <label for="adminChoice" id="adminLabel">Admin
+                            <input type="radio" id="adminChoice" value="admin" name="accountType" required>
+                        </label>
+                    </span>
+                </div>
             </div>
             <div class="formButtons">
                 <div class="formElement">
@@ -69,15 +80,8 @@
 
 
     <div id="bottom-nav"></div>
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
-
     <script type="module" src="./src/app.js"></script>
-    <script type="module" src="./src/updateMatchInfo.js"></script>
+    <script type="module" src="./src/updateProfile.js"></script>
 </body>
 
 </html>
