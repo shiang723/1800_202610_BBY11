@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Leaderboard</title>
+    <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!-- Required meta tags -->
@@ -15,14 +15,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <!-- Font libraries -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=home,news,videocam"
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <!-- Link to stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/bottomNav.css">
-</head>
+    <script type="module" src="./src/bottomNavLoader.js"></script>
 
 <body>
     <!------------------------------>
@@ -30,7 +32,7 @@
     <!------------------------------>
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="login.html">EXTRA TIME</a>
+            <a class="navbar-brand">EXTRA TIME</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -45,7 +47,7 @@
                             Profile
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Bet on a Match</a></li>
+                            <li><a class="dropdown-item" href="match-bet.html">Bet on a Match</a></li>
                             <li><a class="dropdown-item" href="#">View Bets</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -75,35 +77,80 @@
         </div>
     </nav>
 
- <!-- || This is the beginning of the leaderboard || -->
-<br>
-<h1 class="leader">Player Leaderboard</h1>
-<table>
-    <tr>
-        <th>Rank</th>
-        <th>Name</th>
-        <th>Points</th>
-    </tr>
-    <tbody id="leaderboard-body">
-        <!-- Populated dynamically -->
-    </tbody>
-</table>
-    <!-- || This is the end of the leaderboard || -->
+    <div class="matches-wrapper">
 
+        <h1 class="section-title upcoming-title">Upcoming Matches</h1>
 
+        <div class="match-card">
+            <div class="team-side">
+                <span class="material-symbols-outlined flag-icon">flag</span>
+                <div class="team-name team1-name">MEX</div>
+            </div>
+
+            <div class="match-middle">
+                <div class="upcoming-vs">vs</div>
+                <div class="match-date">June 11, 26 &nbsp; 12:00 P.M.</div>
+                <br>
+                <a href="betting.html?matchDocID=MEXvsRSA" class="btn btn-primary"> Bet on Match </a>
+            </div>
+
+            <div class="team-side">
+                <span class="material-symbols-outlined flag-icon">flag</span>
+                <div class="team-name team2-name">RSA</div>
+            </div>
+        </div>
+
+        <div class="match-card">
+            <div class="team-side">
+                <span class="material-symbols-outlined flag-icon">flag</span>
+                <div class="team-name" id="team1-name">KOR</div>
+            </div>
+
+            <div class="match-middle">
+                <div class="upcoming-vs">vs</div>
+                <div class="match-date">June 11, 26 &nbsp; 7:00 P.M.</div>
+                <br>
+                <a href="betting.html?matchDocID=KORvsTBD" class="btn btn-primary"> Bet on Match </a>
+            </div>
+
+            <div class="team-side">
+                <span class="material-symbols-outlined flag-icon">flag</span>
+                <div class="team-name">TBD</div>
+            </div>
+        </div>
+
+        <div class="match-card">
+            <div class="team-side">
+                <span class="material-symbols-outlined flag-icon">flag</span>
+                <div class="team-name">CAN</div>
+            </div>
+
+            <div class="match-middle">
+                <div class="upcoming-vs">vs</div>
+                <div class="match-date">June 12, 26 &nbsp; 12:00 P.M.</div>
+                <br>
+                <a href="betting.html?matchDocID=CANvsTBD" class="btn btn-primary"> Bet on Match </a>
+
+            </div>
+            <div class="team-side">
+                <span class="material-symbols-outlined flag-icon">flag</span>
+                <div class="team-name">TBD</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer>
+    <div id="bottom-nav"></div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
-        <script type="module" src="src/leaderboard.js"></script>
-
 
     <!-- Link to scripts of your own -->
     <script type="module" src="./src/main.js"></script>
     <div id="bottom-nav"></div>
     <script type="module" src="./src/bottomNavLoader.js"></script>
-
-
-</body>
+</footer>
 
 </html>
