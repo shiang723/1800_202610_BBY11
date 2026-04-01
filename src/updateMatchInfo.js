@@ -1,102 +1,134 @@
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 import { db } from './firebaseConfig.js';
 
 
-
 function getDocId() {
-    if (window.location.pathname == "/updateMatchInfo.html") {
-        return localStorage.getItem('matchDocID');
-    }
-    else {
-        const params = new URL(window.location.href).searchParams;
-        return params.get("matchDocID");
-    }
+   const params = new URLSearchParams(window.location.search);
+   let id = params.get("docID");
+
+
+   // If not in URL, check localStorage
+   if (!id) {
+       id = localStorage.getItem('matchDocID');
+   }
+
+
+   console.log("Current Match ID being used:", id); // This will show in your console
+   return id;
 }
 
-document.getElementById("saveUpdateInfo").addEventListener("click", async () => {
-    await updateMatchInfo();
-    await getMatchInfo();
-    location.reload();
-})
-document.getElementById("cancelUpdate").addEventListener("click", () => {
-    console.log("Cancelled update")
-    history.back()
-})
 
-const updateMatchHCL = document.getElementById("homeCountry");
-const updateMatchACL = document.getElementById("awayCountry");
-const pointsInputH = document.getElementById("homePointsTextbox");
-const pointsInputA = document.getElementById("awayPointsTextbox");
-const statusSelect = document.getElementById("matchStatusDropdown");
-
-export async function getMatchInfo(homeCountryLabel, awayCountryLabel, homePointsInput, awayPointsInput, matchStatusSelect) {
-    const id = getDocId();
-    try {
-        const matchDoc = await getDoc(doc(db, "Match", id));
-        const matchData = matchDoc.data();
-
-        let homeCountryElement = homeCountryLabel;
-        let awayCountryElement = awayCountryLabel;
-        let homePointsElement = homePointsInput;
-        let awayPointsElement = awayPointsInput;
-        let matchStatusElement = matchStatusSelect;
+// Function to pull current info from Firebase and fill the textboxes
+export async function getMatchInfo() {
+   const id = getDocId();
+   if (!id) {
+       console.error("No Match ID found to load info.");
+       return;
+   }
 
 
-        if (window.location.pathname == "/updateMatchInfo.html") {
-            if (matchData.status == "upcoming") {
-                homePointsElement.disabled = true;
-                awayPointsElement.disabled = true;
-            }
+   try {
+       const matchDoc = await getDoc(doc(db, "Match", id));
+       if (matchDoc.exists()) {
+           const matchData = matchDoc.data();
 
-            else if (matchData.status == "done") {
-                window.alert("Match is done, edit can not be made to match information.")
-                history.back()
-            }
 
-        }
+           // Select elements
+           const homeCountryElement = document.getElementById("homeCountry");
+           const awayCountryElement = document.getElementById("awayCountry");
+           const homePointsElement = document.getElementById("homePointsTextbox");
+           const awayPointsElement = document.getElementById("awayPointsTextbox");
+           const matchStatusElement = document.getElementById("matchStatusDropdown");
 
-        homeCountryElement.textContent = `${matchData.home_team}'s Points:`;
-        awayCountryElement.textContent = `${matchData.away_team}'s Points:`;
-        homePointsElement.value = Number(matchData.home_points_scored);
-        awayPointsElement.value = Number(matchData.away_points_scored);
-        matchStatusElement.value = matchData.status;
 
-    } catch(error) {
-        console.log("Error loading match info: " + error );
-    }
+           // Logic for status
+           if (matchData.status === "done") {
+               window.alert("Match is done, edits cannot be made.");
+               history.back();
+               return;
+           }
+
+
+           if (matchData.status === "upcoming") {
+               homePointsElement.disabled = true;
+               awayPointsElement.disabled = true;
+           }
+
+
+           // Fill UI
+           homeCountryElement.textContent = `${matchData.home_team}'s Points:`;
+           awayCountryElement.textContent = `${matchData.away_team}'s Points:`;
+           homePointsElement.value = Number(matchData.home_points_scored);
+           awayPointsElement.value = Number(matchData.away_points_scored);
+           matchStatusElement.value = matchData.status;
+       }
+   } catch (error) {
+       console.error("Error loading match info:", error);
+   }
 }
 
+
+// Function to save new info to Firebase
 async function updateMatchInfo() {
-    const id = getDocId();
-    const matchStatusUpdated = document.getElementById("matchStatusDropdown").value;
-
-    let homePointsUpdated;
-    let awayPointsUpdated
-
-    if (matchStatusUpdated == "upcoming") {
-        homePointsUpdated = "0";
-        awayPointsUpdated = "0";
-    } else {
-        homePointsUpdated = document.getElementById("homePointsTextbox").value;
-        awayPointsUpdated = document.getElementById("awayPointsTextbox").value;
-    }
+   const id = getDocId();
+   const matchStatusUpdated = document.getElementById("matchStatusDropdown").value;
+   const homePointsRaw = document.getElementById("homePointsTextbox").value;
+   const awayPointsRaw = document.getElementById("awayPointsTextbox").value;
 
 
-    if (homePointsUpdated && awayPointsUpdated && matchStatusUpdated) {
-        try {
-            await updateDoc(doc(db, "Match", id), {
-                home_points_scored: Number(homePointsUpdated),
-                away_points_scored: Number(awayPointsUpdated),
-                status: matchStatusUpdated
-            });
-            window.alert(`Sucessfully updated information for match`)
-        } catch (error) {
-            window.alert(error)
-            console.error("Error updating document to firestore: " + error)
-        }
-    } else {
-        window.alert("One of the input does not have a value. Please make sure each input has a valid value before saving.")
-    }
+   const hTeam = document.getElementById("homeCountry").textContent.replace("'s Points:", "").trim();
+   const aTeam = document.getElementById("awayCountry").textContent.replace("'s Points:", "").trim();
 
+
+   if (homePointsRaw !== "" && awayPointsRaw !== "" && matchStatusUpdated !== "") {
+       try {
+          
+           await setDoc(doc(db, "Match", id), {
+               away_points_scored: Number(awayPointsRaw),
+               away_team: aTeam,
+               home_points_scored: Number(homePointsRaw),
+               home_team: hTeam,
+               matchID: id,
+               start_date: "2026-06-13T12:00:00", // You can replace with a date input value later
+               status: matchStatusUpdated,
+               time_start: "June 13, 26 12:00 P.M." // You can replace with a time input value later
+           }, { merge: true });
+
+
+           window.alert(`Successfully updated information for match`);
+           window.location.href = `Match_Details.html?docID=${id}`;
+       } catch (error) {
+           console.error("Error updating document:", error);
+           window.alert("Firebase Error: " + error.message);
+       }
+   } else {
+       window.alert("Please make sure each input has a valid value.");
+   }
 }
-document.addEventListener('DOMContentLoaded', getMatchInfo(updateMatchHCL, updateMatchACL, pointsInputH, pointsInputA, statusSelect));
+
+
+// --- SINGLE INITIALIZATION BLOCK ---
+document.addEventListener('DOMContentLoaded', () => {
+   // 1. Load the initial data
+   getMatchInfo();
+
+
+   // 2. Attach Save Listener
+   const saveBtn = document.getElementById("saveUpdateInfo");
+   if (saveBtn) {
+       saveBtn.addEventListener("click", async (e) => {
+           e.preventDefault();
+           await updateMatchInfo();
+       });
+   }
+
+
+   // 3. Attach Cancel Listener
+   const cancelBtn = document.getElementById("cancelUpdate");
+   if (cancelBtn) {
+       cancelBtn.addEventListener("click", (e) => {
+           e.preventDefault();
+           history.back();
+       });
+   }
+});

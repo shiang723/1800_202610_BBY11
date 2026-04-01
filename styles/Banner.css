@@ -1,0 +1,93 @@
+.mega-hero-banner {
+   background-color: #130b67;
+   height: 350px;
+   width: 100%;
+   display: flex;
+   position: relative;
+   overflow: hidden;
+}
+
+
+/* Container for images */
+.banner-images-left {
+   display: flex;
+   width: 60%;
+   height: 100%;
+   position: relative;
+}
+
+
+.image-slice {
+   position: relative;
+   height: 100%;
+   width: 28%;
+   margin-right: -10%; /* Keep the overlap */
+   flex-shrink: 0;
+}
+
+
+/* --- THE FIX: Control stacking so slants tuck BEHIND the previous player --- */
+.slice-1 { z-index: 4; }
+.slice-2 { z-index: 3; }
+.slice-3 { z-index: 2; }
+.slice-4 { z-index: 1; }
+
+
+.image-slice img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   /* Apply slant to ALL images now */
+   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+
+.slice-1 img {
+   clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+
+/* --- THE ADJUSTMENT: Slanted AND Faded for the 4th image --- */
+.slice-4 img {
+   /* Keep the matching slant */
+   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+   /* Keep your gradient mask for the smooth fade into blue */
+   -webkit-mask-image: linear-gradient(115deg, black 20%, transparent 80%);
+   mask-image: linear-gradient(115deg, black 20%, transparent 80%);
+}
+
+
+/* Text Area */
+.banner-text-area {
+   width: 40%;
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   z-index: 10;
+   color: white;
+}
+
+
+.accent-text {
+   color: #e63946;
+   font-weight: 800;
+   font-size: 0.8rem;
+   letter-spacing: 1px;
+   margin-bottom: 0.5rem;
+}
+
+
+.main-heading {
+   font-size: 2.5rem;
+   font-weight: 900;
+   line-height: 1.1;
+   text-transform: uppercase;
+}
+
+
+/* Mobile Fix */
+@media (max-width: 992px) {
+   .banner-images-left { width: 100%; position: absolute; opacity: 0.5; }
+   .banner-text-area { width: 100%; text-align: center; }
+}
