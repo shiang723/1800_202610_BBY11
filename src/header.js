@@ -1,6 +1,7 @@
 import { onAuthReady } from "./authentication.js"
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '/src/firebaseConfig.js';
+import { isAdmin } from '/src/app.js';
 
 // Function to load the header
 function loadHeader() {
@@ -13,8 +14,18 @@ function loadHeader() {
         })
         .then(data => {
             document.getElementById("Header").innerHTML = data;
-            loadProfilePicture()
-            loadPoints() 
+            onAuthReady(async (user) => {
+                if (user) {
+                    try {
+                        loadProfilePicture()
+                        loadPoints()
+                    } catch (error) {
+                        console.log("No user found " + e);
+                    }
+                } else {
+                    loadLogin()
+                } 
+            })
         })
         .catch(error => {
             console.error("Error loading header:", error);
@@ -36,6 +47,9 @@ async function loadProfilePicture() {
                     "/images/user-square.png";
                 if (profileImg) {
                     profileImg.src = userProfilePicture;
+                    if (isAdmin()) {
+                        profileImg.style.outline = "2px solid #009933";
+                    }
                 } else {
                     console.error("No image element found to display the profile image.");
                 }
@@ -69,6 +83,19 @@ async function loadPoints() {
             }
         }
     });
+}
+
+async function loadLogin(){
+    const userInfo = document.querySelector(".user-info");
+
+    userInfo.style.display = "none";
+    const loginButton = `<button class = "btn btn-light" id = "log-in-button">Log In</button>`
+    document.querySelector(".navbar-top").insertAdjacentHTML("beforeend",loginButton);
+
+
+    document.getElementById('log-in-button').addEventListener("click", ()=> {
+        window.location = "login.html";
+    })
 }
 
 

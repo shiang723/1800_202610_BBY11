@@ -3,6 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";     //Detect login state
 import { auth, db } from '/src/firebaseConfig.js';        //Firebase authentication connection
 import { logoutUser, onAuthReady, checkAuthState } from '/src/authentication.js';  //Perform logout action  
 import { doc, getDoc } from "firebase/firestore";
+import {isAdmin} from "/src/app.js"
 
 function initAuthUI() {
 
@@ -58,6 +59,13 @@ function getUserInfo() {
         }
         if (userProfilePicture) {
             userProfilePicture.src = profileImg;
+            if (isAdmin()){
+                userProfilePicture.style.outline = "2px solid #009933";
+                document.getElementById('user_type').textContent = "User Status: Admin";
+            } else {
+                document.getElementById('user_type').textContent = "User Status: Regular User";
+            }
+
         } else {
             console.error("No image element found to display the profile image.");
         }
