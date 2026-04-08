@@ -149,6 +149,7 @@ async function updateProfileInfo() {
             }
         }
     });
+    location.reload();
 }
 await checkAuthState(); 
 getUserInfo();

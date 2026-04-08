@@ -47,7 +47,7 @@ async function loadProfilePicture() {
                     "/images/user-square.png";
                 if (profileImg) {
                     profileImg.src = userProfilePicture;
-                    if (isAdmin()) {
+                    if (await isAdmin() == true) {
                         profileImg.style.outline = "2px solid #009933";
                     }
                 } else {

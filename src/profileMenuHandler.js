@@ -59,7 +59,7 @@ function getUserInfo() {
         }
         if (userProfilePicture) {
             userProfilePicture.src = profileImg;
-            if (isAdmin()){
+            if (await isAdmin() == true){
                 userProfilePicture.style.outline = "2px solid #009933";
                 document.getElementById('user_type').textContent = "User Status: Admin";
             } else {
