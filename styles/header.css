@@ -80,6 +80,10 @@
     font-weight: bold;
 }
 
+#point-display {
+    margin-top: 1rem;
+}
+
 /* -------------------------------- */
 /* End of Styling for user points */
 /* -------------------------------- */

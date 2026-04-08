@@ -114,10 +114,10 @@ export async function logoutUser() {
 // -------------------------------------------------------------
 export function checkAuthState() {
   onAuthStateChanged(auth, (user) => {
-    if (window.location.pathname.endsWith("main.html")) {
+    if (window.location.pathname.endsWith("main.html") || window.location.pathname.endsWith("earnPoints.html")
+      ||window.location.pathname.endsWith("Profile.html")) {
       if (user) {
         const displayName = user.displayName || user.email;
-        $("#welcomeMessage").text(`Hello, ${displayName}!`);
       } else {
         window.location.href = "index.html";
       }

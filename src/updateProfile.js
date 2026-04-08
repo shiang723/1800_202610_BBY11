@@ -1,7 +1,7 @@
 import { isAdmin } from './app';
 import { db } from '/src/firebaseConfig.js';        //Firebase authentication connection
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { onAuthReady } from '/src/authentication.js';  //Perform logout action  
+import { onAuthReady, checkAuthState } from '/src/authentication.js';  //Perform logout action  
 
 
 //Get and load the user information on updateProfile.html page.
@@ -150,5 +150,5 @@ async function updateProfileInfo() {
         }
     });
 }
-
+await checkAuthState(); 
 getUserInfo();

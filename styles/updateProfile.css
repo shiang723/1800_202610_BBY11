@@ -10,6 +10,17 @@
     height: 80px;
 }
 
+.material-symbols-outlined {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1%;
+}
+
+#exit_button {
+    text-decoration: none;
+    color: #000000;
+}
+
 #profileUpdatePage {
     padding-bottom: 80px;
 }
@@ -19,7 +30,7 @@
     font-weight: bold;
     font-size: 28pt;
     padding-bottom: 2px;
-    margin-top: 20px;
+    margin-top: 0px;
     justify-content: space-around
 }
 
@@ -44,10 +55,6 @@ country-select {
     width: 100% !important;
     border-radius: 5px;
     padding-right: 10px;
-}
-
-p {
-    margin-bottom: 5px !important;
 }
 
 .formButtons {

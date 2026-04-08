@@ -1,7 +1,7 @@
 // Import specific functions from the Firebase Auth SDK
 import { onAuthStateChanged } from "firebase/auth";     //Detect login state
 import { auth, db } from '/src/firebaseConfig.js';        //Firebase authentication connection
-import { logoutUser, onAuthReady } from '/src/authentication.js';  //Perform logout action  
+import { logoutUser, onAuthReady, checkAuthState } from '/src/authentication.js';  //Perform logout action  
 import { doc, getDoc } from "firebase/firestore";
 
 function initAuthUI() {
@@ -63,5 +63,6 @@ function getUserInfo() {
         }
     });
 }
+await checkAuthState(); 
 document.addEventListener('DOMContentLoaded', initAuthUI);
 getUserInfo();

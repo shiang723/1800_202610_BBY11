@@ -1,0 +1,51 @@
+.card {
+    border-radius: 10px;
+    margin: 20px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.card:focus {
+    border: 1px solid rgb(100, 161, 247);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(173, 202, 255, 0.942);
+}
+
+.card:hover {
+    border: 1px solid rgb(100, 161, 247);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(173, 202, 255, 0.942);
+}
+
+.card-text {
+    padding-left: 3px;
+}
+
+.card p {
+    padding-left: 3px;
+    margin-bottom: 2px;
+}
+
+#Header {
+    height: 80px;
+}
+
+.pageTitle {
+    display: flex;
+    font-weight: bold;
+    font-size: 28pt;
+    padding-bottom: 2px;
+    margin-top: 0px;
+    justify-content: space-around
+}
+
+.material-symbols-outlined {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1%;
+}
+
+#exitButton {
+    text-decoration: none;
+    color: #000000;
+}
