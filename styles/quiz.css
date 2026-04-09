@@ -1,0 +1,74 @@
+/* Styling for header so page is not hidden behind it. */
+#Header {
+    height: 80px;
+}
+
+/* Styling for the google icons */
+.material-symbols-outlined {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1%;
+}
+
+/* The styling for back button */
+
+#exitButton {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Styling for quiz title */
+.pageTitle {
+    display: flex;
+    font-weight: bold;
+    font-size: 28pt;
+    padding-bottom: 2px;
+    margin-top: 0px;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+/* Styling for text adjacent to quiz title */
+.pageTitle+p {
+    justify-self: center;
+    margin-bottom: 5px;
+}
+
+/* Styling for text almost adjacent  to quiz title */
+.pageTitle+p+p {
+    margin-top: 5px;
+    justify-self: center;
+}
+
+/* Styling for quiz form container */
+#quizFormFull {
+    margin-bottom: 150px;
+}
+
+/* Styling for quiz form */
+#quizForm {
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+/* Styling for the question title */
+.questionTitle {
+    margin-top: 15px;
+}
+
+/* Styling for textarea in quiz form*/
+.form-text {
+    width: 95%;
+}
+
+/* Styling for submit button */
+.btn-primary {
+    background-color: #000000 !important;
+}
+
+/* Styling for submit button container */
+.submitWrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around
+}

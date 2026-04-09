@@ -7,7 +7,7 @@
     z-index: 1000;
 }
 
-/* Gray Top Bar */
+/* Blue Top Bar */
 .navbar-top {
     background-color: #3A506B;
     height: 80px;
@@ -17,6 +17,7 @@
     padding: 0 20px;
 }
 
+/* Logo container styling */
 .logo-container {
     position: relative;
     display: flex;
@@ -36,6 +37,7 @@
     pointer-events: none;
 }
 
+/* Logo header styling */
 .logo-container h1 {
     position: relative;
     z-index: 2;
@@ -43,6 +45,7 @@
     color: #ffffff;
 }
 
+/* Logo header styling */
 .ET {
     font-family: "Hanalei Fill", system-ui;
     font-weight: 400;
@@ -78,6 +81,10 @@
     align-items: center;
     font-size: 0.8rem;
     font-weight: bold;
+}
+
+#point-display {
+    margin-top: 1rem;
 }
 
 /* -------------------------------- */

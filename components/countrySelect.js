@@ -1,3 +1,5 @@
+// A dropdown component that has all 44 countries in the FIFA 2026 World Cup.
+// Made as used more than once and takes up a lot of space on html files.
 class countrySelect extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
