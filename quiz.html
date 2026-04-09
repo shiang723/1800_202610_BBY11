@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <!-- Link to stylesheets -->
+    <!-- Link to stylesheets and code -->
     <link rel="stylesheet" href="styles/quiz.css">
     <link rel="stylesheet" href="styles/bottomNav.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
@@ -29,15 +29,20 @@
 </head>
 
 <body>
+    <!-- The header component -->
     <div id="Header"></div>
+    <!-- The back button -->
     <a id="exitButton" href="javascript:history.back()">
         <span class="material-symbols-outlined">
             arrow_back
         </span>
     </a>
+    <!-- The quiz title and quiz information -->
     <p class="pageTitle">Loading...</p>
     <p><span id="quizLength"></span> questions</p>
     <p>Max points you can earn: <span id="maxPoints"></span> points</p>
+
+    <!-- The quiz form with templates for different type of questions -->
     <form id="quizFormFull">
         <div id="quizForm">
             <template id="quizQuestion">
@@ -57,14 +62,14 @@
                 </template>
             </template>
         </div>
+        <!-- The submit button -->
         <div class="submitWrapper">
             <button type="submit" class="btn btn-primary" id="submitQuizBtn">Submit Quiz</button>
         </div>
     </form>
-
-
+    <!-- Bottom Navbar component -->
     <div id="bottom-nav"></div>
-
+    <!-- Script for page -->
     <script type="module" src="./src/quiz.js"></script>
 
 </body>

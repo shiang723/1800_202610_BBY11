@@ -3,7 +3,8 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from '/src/firebaseConfig.js';
 import { isAdmin } from '/src/app.js';
 
-// Function to load the header
+// Function to load the header navbar component
+// Called when the Header component is used on a page.
 function loadHeader() {
     fetch("header.html")
         .then(response => {
@@ -32,6 +33,8 @@ function loadHeader() {
         });
 }
 
+// Get the profile picture from Firestore and display on header navbar.
+// Called when component is loaded.
 async function loadProfilePicture() {
     const profileImg = document.querySelector(".profile-pic");
 
@@ -61,6 +64,8 @@ async function loadProfilePicture() {
     });
 }
 
+// Get the point field value from Firestore and display on header navbar.
+// Called when component is loaded.
 async function loadPoints() {
     const pointDisplay = document.getElementById("point-display");
 
@@ -85,6 +90,8 @@ async function loadPoints() {
     });
 }
 
+// Shows the login button when no user is logged in
+// Called when no user is found during loading page.
 async function loadLogin(){
     const userInfo = document.querySelector(".user-info");
 

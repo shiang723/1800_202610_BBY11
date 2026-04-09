@@ -1,18 +1,7 @@
 import { doc, getDoc, query, where, getDocs, increment, collection, writeBatch } from "firebase/firestore";
 import { auth, db } from '/src/firebaseConfig.js';        //Firebase authentication connection
 
-// Get the button by ID
-const signUpBtn = document.getElementById('signUpBtn');
-
-// Only run this if the button exists on the current page
-if (signUpBtn) {
-    signUpBtn.addEventListener('click', () => {
-        // Redirect to your signup.html file
-        window.location.href = 'SignUp.html';
-    });
-}
-
-//for linking to updateMatchpage
+//for linking match details page to updateMatchpage while keeping the match document ID.
 export function saveMatchDocumentIDandRedirect() {
     const updateMatchButton = document.getElementById("updateInfoButton");
 
@@ -36,7 +25,8 @@ export function saveMatchDocumentIDandRedirect() {
 
 }
 
-
+// Queries user's subcollection user_bets for any unpaid transactions.
+// Pay out the pending transactions for complete matches.
 export async function payOutUser() {
     var user = auth.currentUser;
 
@@ -79,6 +69,7 @@ export async function payOutUser() {
 
 
 // Check if user is an admin.
+// Return true if is and false otehrwise.
 export async function isAdmin(){
     var user = auth.currentUser;
     if (!user) return;

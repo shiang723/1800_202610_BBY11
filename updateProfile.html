@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <!-- Link to stylesheets -->
+    <!-- Link to stylesheets and scripts-->
     <link rel="stylesheet" href="styles/updateProfile.css">
     <link rel="stylesheet" href="styles/bottomNav.css">
     <script type="module" src="./src/bottomNavLoader.js"></script>
@@ -31,12 +31,15 @@
 </head>
 
 <body>
+    <!-- The header component -->
     <div id="Header"></div>
+    <!-- The back button -->
     <a id="exit_button" href="javascript:history.back()">
         <span class="material-symbols-outlined">
             arrow_back
         </span>
     </a>
+    <!-- The profile update UI container and items -->
     <div id="profileUpdatePage">
         <p class="pageTitle">Update Profile</p>
         <form id="updateProfileForm">
@@ -44,6 +47,7 @@
                 <p class="radioHeader">Email:</p>
                 <p id="email"></p>
             </div>
+            <!-- Elements where user can update their profile information -->
             <div class="formElement">
                 <label for="profilePictureUploader" id="pictureLabel">Profile Picture:</label>
                 <img id="profileImage" src="/images/user-square.png" alt="Profile Picture" width="50" height="50">
@@ -70,6 +74,7 @@
                     </span>
                 </div>
             </div>
+            <!-- The cancel and save buttons -->
             <div class="formButtons">
                 <div class="formElement">
                     <label for="cancelUpdate" id="cancelUpdateLabel"></label>
@@ -82,9 +87,10 @@
             </div>
         </form>
     </div>
-
-
+    <!-- Bottom Navbar component -->
     <div id="bottom-nav"></div>
+
+    <!-- Script for page -->
     <script type="module" src="./src/app.js"></script>
     <script type="module" src="./src/updateProfile.js"></script>
 </body>

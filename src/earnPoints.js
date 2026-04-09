@@ -2,11 +2,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 
-import { onAuthReady, checkAuthState } from "./authentication.js";
+import { checkAuthState } from "./authentication.js";
 import { db } from "./firebaseConfig.js";
-import {doc, onSnapshot, getDoc, collection, getDocs, addDoc, serverTimestamp, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import {collection, getDocs, addDoc } from "firebase/firestore";
 
 // Helper function to add the sample quiz documents.
+// Called when needed to seed quiz data into Firestore.
 async function addQuizData() {
     const quizRef = collection(db, "quiz");
 
@@ -137,6 +138,8 @@ async function seedQuiz() {
     }
 }
 
+// Gets the quiz collection from Firestore and display each as a card using
+// the quiz card template.
 async function displayCardsDynamically() {
     let cardTemplate = document.getElementById("quizCardTemplate");
     const quizCollectionRef = collection(db, "quiz");
@@ -164,6 +167,12 @@ async function displayCardsDynamically() {
         console.error("Error getting documents: ", error);
     }
 }
+
+// Check that user is logged in, redirect them if they are not.
 await checkAuthState(); 
+
+// try seeding quiz collection.
 await seedQuiz();
+
+// get and display the cards on the page.
 await displayCardsDynamically();

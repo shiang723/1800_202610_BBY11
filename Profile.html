@@ -20,33 +20,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
-    <link rel="stylesheet" href="styles/profile.css">
 
+    <!-- Link to stylesheets and scripts-->
+    <link rel="stylesheet" href="styles/profile.css">
 </head>
 
 <body>
+    <!-- The back button -->
     <a id="exit_button" href="javascript:history.back()">
         <span class="material-symbols-outlined">
             arrow_back
         </span>
     </a>
+    <!-- The profile menu and its components -->
     <div id="profile_view">
+        <!-- Top of profile menu with user information -->
         <div id="profile_top">
             <div id="user_img_name">
                 <img id="profile_pic" src="./images/user-square.png" alt="User Profile">
                 <p class="welcome_msg">Hello <span id="user_name"></span>!</p>
-
             </div>
             <p id="user_type"></p>
             <p>Your Points:
                 <img src="./images/dry-cleaning-with-perchlorenthylene.png" alt="Points Icon" class="nav-points-img">
                 <span id="user_point"></span>
             </p>
-
             <p>Team: <span id="support_country"></span></p>
-
         </div>
-
+        <!-- Profile menu links to other pages -->
         <div id="user_menu" class="list-group list-group-flush">
 
             <a href="updateProfile.html" class="list-group-item">
@@ -55,17 +56,17 @@
             </a>
             <a href="earnPoints.html" class="list-group-item">
                 <h3>Earn Free Points</h3>
-                <p>Play Trivia</p>
+                <p>Play Trivia to earn points.</p>
             </a>
+            <!-- Log out button -->
             <p id="logoutButtonWrapper" class="list-group-item">
                 <button class="btn btn-dark btn-lg" id="logoutButton">
                     Log Out
                 </button>
             </p>
-
         </div>
     </div>
-
+    <!-- Script for page -->
     <script type="module" src="./src/profileMenuHandler.js"></script>
 </body>
 
