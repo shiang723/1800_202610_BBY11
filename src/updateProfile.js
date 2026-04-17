@@ -1,10 +1,11 @@
 import { isAdmin } from './app';
 import { db } from '/src/firebaseConfig.js';        //Firebase authentication connection
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { onAuthReady } from '/src/authentication.js';  //Perform logout action  
+import { onAuthReady, checkAuthState } from '/src/authentication.js';  //Perform logout action  
 
 
-//Get and load the user information on updateProfile.html page.
+// Get and load the user information on updateProfile.html page.
+// Called when page loads.
 async function getUserInfo() {
 
     //The elements for each field on the html page.
@@ -20,10 +21,8 @@ async function getUserInfo() {
             try {
                 const userDoc = await getDoc(doc(db, "users", user.uid));
                 const email = userDoc.exists()
-                    ? user.email : "no email found"
-                const country = userDoc.exists()
-                    ? userDoc.data().country
-                    : "none";
+                    ? user.email : "no email found";
+                const country = userDoc.data().country;
                 const profileImg = userDoc.exists() ?
                     "data:image/png;base64," + userDoc.data().profileImage :
                     "/images/user-square.png";
@@ -58,6 +57,7 @@ async function getUserInfo() {
 // Function to save the Base64 image to Firestore
 // as a key value pair in the user's document. 
 // (Template from Carly's tech tips (COMP 1800))
+// Called when user chooses to update their profile img.
 //---------------------------------------------------
 async function saveProfileImage(base64String) {
     // Wait for the currently signed-in user
@@ -83,8 +83,8 @@ async function saveProfileImage(base64String) {
 // When an image is chosen, it will then save that image into the
 // user's document in Firestore
 // (Template from Carly's tech tips (COMP 1800))
+// Called when user chooses to update their profile img.
 //-------------------------------------------------------------
-
 function uploadImage() {
     console.log("Uploading img");
     // Attach event listener to the file input
@@ -109,6 +109,8 @@ function uploadImage() {
 
 // Listener for the Save button on the updateProfile.html page
 // On click, update Firestore with the values on the page.
+// Then reload page with new user information.
+// Called when Save button is pressed.
 document.getElementById("saveUpdateInfo").addEventListener("click", async () => {
     uploadImage();
     await updateProfileInfo();
@@ -124,6 +126,7 @@ document.getElementById("cancelUpdate").addEventListener("click", () => {
 })
 
 // update the user information in Firestore.
+// Called when save button is pressed.
 async function updateProfileInfo() {
     
     //The elements for each relevant field on the html page.
@@ -131,7 +134,7 @@ async function updateProfileInfo() {
     const accountType =  document.querySelector(`input[name="accountType"]:checked`).value;
     var admin;
 
-    // Check which account type is checked and assign boolean to admin.
+    // Check which account type radio button is checked and assign boolean to admin.
     if (accountType == "admin") {
         admin = true;
     } else {
@@ -149,6 +152,11 @@ async function updateProfileInfo() {
             }
         }
     });
+    location.reload();
 }
 
+// Check if user is logged in, redirect if no user found.
+await checkAuthState(); 
+
+// Load elements on the page.
 getUserInfo();

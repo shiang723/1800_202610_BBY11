@@ -1,20 +1,24 @@
+/* Styling for the google icons */
+.material-symbols-outlined {
+        display: flex;
+        justify-content: flex-start;
+        padding: 1%;
+}
+
+/* The styling for back button */
 #exit_button {
         text-decoration: none;
         color: #000000;
 }
 
-.material-symbols-outlined {
-        display: flex;
-        justify-content: flex-end;
-        padding: 1%;
-}
-
+/* Styling for top of profile menu */
 #profile_top {
         display: flex;
         flex-direction: column;
         align-items: center;
 }
 
+/* Styling for container with username and profile img */
 #user_img_name {
         display: flex;
         flex-direction: row;
@@ -22,6 +26,12 @@
         padding: 0.5%;
 }
 
+/* Styling for user welcome message */
+.welcome_msg {
+        font-size: 24pt;
+}
+
+/* Styling for profile picture */
 #profile_pic {
         height: 55px;
         width: 55px;
@@ -29,28 +39,27 @@
         margin-right: 5px;
 }
 
-
+/* Styling for point icon img */
 .nav-points-img {
         height: 24px;
         width: 24px;
 }
 
+/* Styling for user points */
 #user_point {
         text-align: baseline;
 }
 
-.welcome_msg {
-        font-size: 24pt;
+/* Styling for the menu list */
+.list-group-item {
+        padding-left: 3%;
+        padding-top: 2%;
 }
 
+/* Styling for the log out button */
 #logoutButtonWrapper {
         display: flex;
         justify-content: flex-end;
         padding-right: 3%;
-        padding-top: 2%;
-}
-
-.list-group-item {
-        padding-left: 3%;
         padding-top: 2%;
 }

@@ -1,3 +1,37 @@
+/* Styling for header so page is not hidden behind it. */
+#Header {
+    height: 80px;
+}
+
+/* Styling for the google icons */
+.material-symbols-outlined {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1%;
+}
+
+/* The styling for back button */
+#exit_button {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Styling for conatiner of whole page */
+#profileUpdatePage {
+    padding-bottom: 80px;
+}
+
+/* Styling for page title */
+.pageTitle {
+    display: flex;
+    font-weight: bold;
+    font-size: 28pt;
+    padding-bottom: 2px;
+    margin-top: 0px;
+    justify-content: space-around
+}
+
+/* Styling for update profile form */
 #updateProfileForm {
     padding: 1%;
     padding-left: 50px;
@@ -6,38 +40,25 @@
     align-items: left;
 }
 
-#Header {
-    height: 80px;
-}
-
-#profileUpdatePage {
-    padding-bottom: 80px;
-}
-
-.pageTitle {
-    display: flex;
-    font-weight: bold;
-    font-size: 28pt;
-    padding-bottom: 2px;
-    margin-top: 20px;
-    justify-content: space-around
-}
-
+/* Styling for the form elements in the form */
 .formElement {
     margin: 5px;
     display: flex;
     flex-direction: column;
 }
 
+/* Styling for the select element in the form */
 .form-select {
     margin-left: 0px;
 
 }
 
+/* Styling for the country select component */
 country-select {
     margin-right: 20px;
 }
 
+/* Styling for the country-select select element */
 #country-select {
     font-size: medium;
     height: 40px;
@@ -46,27 +67,7 @@ country-select {
     padding-right: 10px;
 }
 
-p {
-    margin-bottom: 5px !important;
-}
-
-.formButtons {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2%;
-    justify-content: flex-end;
-}
-
-.radioButtonField {
-    display: flex;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.btn {
-    margin-right: 10px;
-}
-
+/* Styling for labels on the form */
 label,
 .radioHeader {
     font-weight: bold;
@@ -74,10 +75,20 @@ label,
     padding-bottom: 10px;
 }
 
+/* Styling for the radiobutton container */
+.radioButtonField {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Header for radio button (account type field) */
 .radioHeader {
     padding-bottom: 5px;
 }
 
+/* Start of styling to make radio button look like
+    toggle pill button */
 input[type="radio"] {
     position: absolute;
     opacity: 0;
@@ -102,6 +113,10 @@ input[type="radio"] {
     color: black;
 }
 
+#regularRadio {
+    border-radius: 18px 0px 0px 18px;
+}
+
 #adminRadio {
     transform: translate(145px, 0px);
     border-radius: 0px 18px 18px 0px;
@@ -119,10 +134,7 @@ input[type="radio"] {
     border-radius: 18px;
 }
 
-#regularRadio {
-    border-radius: 18px 0px 0px 18px;
-}
-
+/* Radio labels styling */
 #regularLabel,
 #adminLabel {
     font-size: 15pt;
@@ -135,4 +147,21 @@ input[type="radio"] {
 
 #adminLabel {
     padding-right: 25px;
+}
+
+/* End of styling to make radio button look like
+    toggle pill button */
+
+
+/* Styling for form cancel and save button container*/
+.formButtons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    justify-content: flex-end;
+}
+
+/* Styling for form cancel and save buttons*/
+.btn {
+    margin-right: 10px;
 }

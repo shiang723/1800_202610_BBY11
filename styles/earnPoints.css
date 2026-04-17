@@ -1,0 +1,60 @@
+/* Styling for header so page is not hidden behind it. */
+#Header {
+    height: 80px;
+}
+
+/* Styling for the google icons */
+.material-symbols-outlined {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1%;
+}
+
+/* The styling for back button */
+#exitButton {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Styling for page title */
+.pageTitle {
+    display: flex;
+    font-weight: bold;
+    font-size: 28pt;
+    padding-bottom: 2px;
+    margin-top: 0px;
+    justify-content: space-around
+}
+
+/* Styling for the cards */
+.card {
+    border-radius: 10px;
+    margin: 20px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Styling for when the card is clicked */
+.card:focus {
+    border: 1px solid rgb(100, 161, 247);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(173, 202, 255, 0.942);
+}
+
+/* Styling for when curse hovers over the card */
+.card:hover {
+    border: 1px solid rgb(100, 161, 247);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(173, 202, 255, 0.942);
+}
+
+/* Styling for the card text */
+.card-text {
+    padding-left: 3px;
+}
+
+/* Styling for all the card text */
+.card p {
+    padding-left: 3px;
+    margin-bottom: 2px;
+}
